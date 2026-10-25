@@ -1,0 +1,123 @@
+{
+	"langhuset": {
+		"navn": "Langhuset",
+		"tekst": "Langhuset var hjemmet til hele husstanden: familien, tjenestefolk og treller. Vanlige langhus var 15–30 meter lange, med ildsted inne i huset. Mange hadde fjøs i den ene enden og bolig i den andre. Det største vi kjenner fra vikingtiden, på Borg i Lofoten, var 83 meter langt og var både bolig, fjøs og gildehall.",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Langhus", "url": "https://snl.no/langhus"},
+			{"tekst": "Store norske leksikon: Borg – høvdingsete i Nordland", "url": "https://snl.no/Borg_-_h%C3%B8vdingsete_i_Nordland"}
+		]
+	},
+	"akrene": {
+		"navn": "Åkeren",
+		"tekst": "Korn ble dyrket der det var mulig over hele landet, og gården levde stort sett av det den selv produserte. Fargen på åkeren viser hvor godt året er. En dårlig avling kunne bety sult, og mange trodde at gudene bestemte om året ble godt eller dårlig.",
+		"lenker": [
+			{"tekst": "Norgeshistorie: Den mangfoldige vikingtidsgården", "url": "https://www.norgeshistorie.no/vikingtid/0803-den-mangfoldige-vikingtidsgarden.html"}
+		]
+	},
+	"nyaakeren": {
+		"navn": "Ny åker",
+		"tekst": "Mer jord betydde mer korn og flere folk gården kunne fø. Å rydde ny åker var hardt arbeid: Skog og stein måtte fjernes, og jorda måtte gjødsles. Mye av dette tunge arbeidet ble gjort av treller.",
+		"pris": {"solv": 5, "bondene": 5},
+		"bygg_effekt": "Gir like mye korn som den første åkeren hver vinter. Gode år gir mer, uår gir mindre. Bøndene må hjelpe til med ryddingen.",
+		"lenker": [
+			{"tekst": "Norgeshistorie: Den mangfoldige vikingtidsgården", "url": "https://www.norgeshistorie.no/vikingtid/0803-den-mangfoldige-vikingtidsgarden.html"},
+			{"tekst": "Norgeshistorie: Treller, bønder og elite", "url": "https://www.norgeshistorie.no/vikingtid/mennesker/0801-treller-bonder-og-elite.html"}
+		]
+	},
+	"fjoset": {
+		"navn": "Fjøset",
+		"tekst": "Kyr, sauer, geiter og griser var gårdens viktigste rikdom. Tidligere sto dyra ofte i den ene enden av langhuset, men i vikingtiden ble det mer vanlig med en egen bygning for dyrene. Mengden vinterfôr avgjorde hvor mange dyr gården kunne holde.",
+		"pris": 15,
+		"inntekt": 4,
+		"bygg_effekt": "+4 sølv hver vinter fra melk, ull og kjøtt. Sauene kommer på beite.",
+		"lenker": [
+			{"tekst": "Norgeshistorie: Den mangfoldige vikingtidsgården", "url": "https://www.norgeshistorie.no/vikingtid/0803-den-mangfoldige-vikingtidsgarden.html"},
+			{"tekst": "Store norske leksikon: Langhus", "url": "https://snl.no/langhus"}
+		]
+	},
+	"buret": {
+		"navn": "Buret",
+		"tekst": "I buret ble mat og verdisaker oppbevart: korn, tørket fisk, kjøtt, smør og klær. Forrådet måtte vare gjennom hele vinteren. Nøkler fra vikingtidsgraver kan ha vært et tegn på kontroll over slike forråd.",
+		"pris": 10,
+		"bygg_effekt": "Lagret korn hjelper i uår: Åkrene gir litt sølv selv når avlingen slår feil. Ætten blir glad (+5).",
+		"effekter": {"aetten": 5},
+		"lenker": [
+			{"tekst": "Kulturhistorisk museum (UiO): Vikingenes nøkler", "url": "https://www.khm.uio.no/samlinger/gjenstandskalender-og-funn/2017/vikingenes-nokler.html"}
+		]
+	},
+	"smia": {
+		"navn": "Smia",
+		"tekst": "Smeden laget redskaper, våpen, spiker og beslag av jern. I Norge ble jernet utvunnet av myrmalm, som ble smeltet med trekull i groper. Spor etter slik jernutvinning er funnet over hele landet.",
+		"pris": 15,
+		"inntekt": 3,
+		"bygg_effekt": "+3 sølv hver vinter fra salg av redskaper. Gode våpen gir ære (+5).",
+		"effekter": {"aere": 5},
+		"lenker": [
+			{"tekst": "Store norske leksikon: Myrmalm", "url": "https://snl.no/myrmalm"}
+		]
+	},
+	"naustet": {
+		"navn": "Naustet og skipet",
+		"tekst": "Naustet var et hus ved sjøen der skipet ble lagret, med gavlen og en stor dør mot vannet. Skipet var gårdens viktigste eiendel for fiske, handel og tokt. Langs kysten var sjøen hovedveien.",
+		"pris": {"solv": 20, "bondene": 10},
+		"bygg_effekt": "Du får et skip, og kan dra på handelsferder og tokt. Folk kommer også sjøveien til gården med nye saker. Bøndene må hjelpe til med byggingen. Ære +5.",
+		"effekter": {"aere": 5},
+		"lenker": [
+			{"tekst": "Store norske leksikon: Naust", "url": "https://snl.no/naust"},
+			{"tekst": "Store norske leksikon: Viking", "url": "https://snl.no/viking"}
+		]
+	},
+	"offerlunden": {
+		"navn": "Offerlunden",
+		"tekst": "Blot var offerhandlinger til gudene. Blotene kunne holdes ute, eller i et hov der blodet fra offerdyra ble smurt på gudefigurene og veggene. Blotene ble ofte arrangert av folk med høy rang. Bålet brenner når gudene er fornøyde med deg.",
+		"pris": 10,
+		"bygg_effekt": "En fast plass for blot. Gudenes gunst +10, og folk kommer hit med saker om blot og spådom.",
+		"effekter": {"gudene": 10},
+		"lenker": [
+			{"tekst": "Store norske leksikon: Blot", "url": "https://snl.no/blot"}
+		]
+	},
+	"trellehuset": {
+		"navn": "Trellehuset",
+		"tekst": "Vi vet lite om hvor trellene bodde. Kildene forteller mer om arbeidet deres: De gjerdet, gjødslet åkrene, gjette griser og geiter og skar torv. De fikk dårlig mat og klær, og ble regnet som eiendom.",
+		"lenker": [
+			{"tekst": "Norgeshistorie: Treller, bønder og elite", "url": "https://www.norgeshistorie.no/vikingtid/mennesker/0801-treller-bonder-og-elite.html"},
+			{"tekst": "Store norske leksikon: Trell", "url": "https://snl.no/trell"}
+		]
+	},
+	"gravhaugene": {
+		"navn": "Gravhaugene",
+		"tekst": "Slektas gravhauger lå ofte nær gården, der alle kunne se dem. En gravhaug er en haug av jord eller stein over en eller flere graver, og mange hauger har graver fra flere tidsperioder. Mange gravhauger kan fortsatt sees i landskapet i dag.",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Gravhaug", "url": "https://snl.no/gravhaug"}
+		]
+	},
+	"holmen": {
+		"navn": "Holmen",
+		"tekst": "En liten holme ute i fjorden. Tvekamper ble ofte holdt på slike holmer, og derfor ble de kalt holmgang.",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Holmgang", "url": "https://snl.no/holmgang"}
+		]
+	},
+	"tingstedet": {
+		"navn": "Tingstedet",
+		"tekst": "Tingstedet var møteplassen der de frie mennene drøftet felles saker og dømte i rettssaker. Ringer av steiner blir ofte tolket som tingsteder, men det er usikkert. De fleste saker ble likevel løst utenfor tinget.",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Ting", "url": "https://snl.no/ting_-_forsamling"}
+		]
+	},
+	"nabogarden": {
+		"navn": "Nabogården",
+		"tekst": "Ikke alle var rike. De fleste bøndene i vikingtiden var selveiende, men mange hadde små gårder med få dyr og en liten åker. Et dårlig år kunne tvinge dem til å be høvdingen om hjelp.",
+		"lenker": [
+			{"tekst": "Norgeshistorie: Treller, bønder og elite", "url": "https://www.norgeshistorie.no/vikingtid/mennesker/0801-treller-bonder-og-elite.html"}
+		]
+	},
+	"skogen": {
+		"navn": "Skogen",
+		"tekst": "Skogen ga ved, tømmer, trekull til jernutvinningen og jakt. Her kunne også de fredløse skjule seg, de som hadde mistet lovens vern og kunne drepes uten straff.",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Fredløshet", "url": "https://snl.no/fredl%C3%B8shet"}
+		]
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"fakta": {
+		"tittel": "Sagaene som kilde",
+		"tekst": "Islendingesagaene ble skrevet ned på 1200-tallet, 200–300 år etter vikingtiden. Njåls saga regnes for å være fra rundt 1280. Sagaene handler ofte om overgangen fra hedenskap til kristendom rundt år 1000, men de som skrev dem, levde i et kristent samfunn. Opplysningene om enkeltpersoner er usikre: Sagaene om Olav Tryggvason blander inn legender og litterære grep. Historikere bruker derfor sagaene mest som kilder til tradisjoner og til tiden de ble skrevet i.",
+		"kilde": "Forskning om sagaene",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Islendingesaga", "url": "https://snl.no/islendingesaga"},
+			{"tekst": "Store norske leksikon: Olav Tryggvason", "url": "https://snl.no/Olav_Tryggvason"}
+		]
+	},
+	"refleksjon": [
+		"Hvilke deler av sagaen stemmer med det du faktisk gjorde i spillet, og hva er pyntet på?",
+		"Hvor ser du at sagaskriveren levde 300 år senere, i et kristent samfunn?",
+		"Hvem har fortalt historien videre i 300 år? Hvordan kunne sagaen sett ut hvis dine fiender – eller dine treller – hadde fortalt den?"
+	]
+}

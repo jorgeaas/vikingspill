@@ -1,0 +1,646 @@
+[
+	{
+		"id": "frelse",
+		"sted": "trellehuset",
+		"krever_trell": "kare",
+		"person": "Kåre, trell på gården din",
+		"tittel": "Trellen som vil bli fri",
+		"tekst": "Kåre har vært trell på gården i tolv år. Om kveldene har han dyrket sin egen lille åkerlapp. Nå legger han en pung med sølv på bordet foran deg. «Jeg vil kjøpe meg fri,» sier han.",
+		"valg": [
+			{
+				"tekst": "Ta imot sølvet og gi ham friheten",
+				"resultat": "Du holder et gilde for å markere at Kåre er fri. Nå er han en løysing, en frigitt mann. Men han og barna hans skylder deg fortsatt troskap.",
+				"effekter": {"solv": 10, "aere": 5},
+				"frigi_trell": "kare"
+			},
+			{
+				"tekst": "Si nei – du trenger arbeidskraften",
+				"resultat": "Kåre bøyer hodet. En trell har ingen rett til å klage, men folk på gården snakker om at du er gjerrig.",
+				"effekter": {"aere": -5, "bondene": -5}
+			},
+			{
+				"tekst": "Gi ham friheten uten å ta sølvet",
+				"resultat": "Ryktet om din gavmildhet sprer seg. Men slekta di mener du kaster bort verdier.",
+				"effekter": {"aere": 10, "aetten": -10},
+				"frigi_trell": "kare"
+			}
+		],
+		"fakta": {
+			"tittel": "Treller og frigivelse",
+			"tekst": "En del av befolkningen i vikingtiden var treller: ufrie mennesker som ble regnet som eiendom. Utenlandske treller var for det meste tatt til fange på vikingtokt og krigstog. Trellene gjorde tungt arbeid som å gjerde, gjødsle, gjete og skjære torv. En trell kunne bli frigitt av eieren sin. Den frigitte ble kalt en løysing, og hadde fortsatt lavere status enn de frie bøndene.",
+			"kilde": "Lov: Gulatingslova (skrevet ned rundt 1100, men bygger på eldre muntlig lov)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Trell", "url": "https://snl.no/trell"},
+				{"tekst": "Norgeshistorie: Treller, bønder og elite", "url": "https://www.norgeshistorie.no/vikingtid/mennesker/0801-treller-bonder-og-elite.html"},
+				{"tekst": "Store norske leksikon: Gulatingslova", "url": "https://snl.no/Gulatingsloven"}
+			]
+		}
+	},
+	{
+		"id": "giftemaal",
+		"sted": "langhuset",
+		"person": "Et bud fra nabofjorden",
+		"tittel": "Datteren din skal giftes",
+		"tekst": "Datteren din Ragnhild er femten vintre gammel. Bjørn, fra en mektig slekt i nabofjorden, har sendt bud: Han vil ha henne til kone, og han tilbyr en god mund.",
+		"valg": [
+			{
+				"tekst": "Si ja – en allianse styrker slekta",
+				"resultat": "Bjørn betaler munden, og Ragnhild får med seg medgift. De to slektene er nå bundet sammen. Ragnhild gråter litt den kvelden.",
+				"effekter": {"aetten": 10, "solv": 10, "aere": 5}
+			},
+			{
+				"tekst": "Spør Ragnhild hva hun selv vil",
+				"resultat": "Ragnhild vil ikke ha Bjørn, og du avslår. Bjørns slekt føler seg fornærmet, men datteren din er takknemlig.",
+				"effekter": {"aetten": -5, "aere": -5}
+			},
+			{
+				"tekst": "Krev en høyere mund",
+				"resultat": "Bjørn betaler, men folk i bygda kaller deg grådig.",
+				"effekter": {"solv": 20, "aere": -10}
+			}
+		],
+		"fakta": {
+			"tittel": "Ekteskap – en avtale mellom slekter",
+			"tekst": "Ekteskap var først og fremst en avtale mellom to slekter. Etter de gamle norske landskapslovene måtte brudgommen betale mund for at ekteskapet skulle være gyldig. Munden ble konas egen eiendom, og den kunne sikre henne økonomisk hvis hun ble enke eller skilt. Lovene ble skrevet ned etter vikingtiden, men bygger på eldre skikker.",
+			"kilde": "Lover: de gamle landskapslovene (skrevet ned fra rundt 1100)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Mund", "url": "https://snl.no/mund"}
+			]
+		}
+	},
+	{
+		"id": "nokler",
+		"sted": "buret",
+		"person": "Åsa, husfruen din",
+		"tittel": "Husfruens nøkler",
+		"tekst": "Åsa, kona di, stiller seg foran deg med nøkkelknippet i beltet. «Du er borte på ting og reiser halve året. Jeg styrer buret allerede. Nå vil jeg også bestemme når vi selger ull og ost på handelsstedet.»",
+		"valg": [
+			{
+				"tekst": "Gi henne ansvaret",
+				"resultat": "Åsa handler klokt og får gode priser. Gården går bedre enn før.",
+				"effekter": {"solv": 15, "aetten": 5}
+			},
+			{
+				"tekst": "Nei, handel er din sak",
+				"resultat": "Åsa sier ingenting mer, men det blir kaldt i langhuset. Slekta hennes får høre om det.",
+				"effekter": {"aetten": -10}
+			}
+		],
+		"fakta": {
+			"tittel": "Nøklene – et tegn på makt",
+			"tekst": "Nøkler er funnet i mange graver fra vikingtiden, og de fleste i kvinnegraver. Nøklene kan ha vært et tegn på makt og kontroll over gårdens forråd og verdier. Bildet av den mektige husfruen med nøkler i beltet kommer likevel mye fra norrøn litteratur, og arkeologene har funnet nøkler i menns graver også. Kanskje var rang viktigere enn kjønn.",
+			"kilde": "Arkeologi (gravfunn) og norrøn litteratur",
+			"lenker": [
+				{"tekst": "Kulturhistorisk museum (UiO): Vikingenes nøkler", "url": "https://www.khm.uio.no/samlinger/gjenstandskalender-og-funn/2017/vikingenes-nokler.html"},
+				{"tekst": "Norgeshistorie: Vikingtidens kvinner og menn", "url": "https://www.norgeshistorie.no/vikingtid/0819-vikingtidens-kvinner-og-menn.html"}
+			]
+		}
+	},
+	{
+		"id": "skilsmisse",
+		"sted": "langhuset",
+		"person": "Gudrun, søsteren din",
+		"tittel": "Søsteren vil skille seg",
+		"tekst": "Søsteren din Gudrun kommer hjem med blåmerker i ansiktet. «Torstein slår meg. Jeg vil skille meg fra ham.» Torstein sender bud om at han vil beholde det hun tok med seg inn i ekteskapet.",
+		"valg": [
+			{
+				"tekst": "Støtt Gudrun – hun skal få eiendelene sine tilbake",
+				"resultat": "Gudrun skiller seg fra Torstein. Han raser, men må gi tilbake det som er hennes. Slekta di står samlet.",
+				"effekter": {"aetten": 10, "aere": 5}
+			},
+			{
+				"tekst": "Send henne tilbake – ekteskapet er en avtale",
+				"resultat": "Gudrun drar tilbake til Torstein. Moren din snakker ikke til deg resten av vinteren.",
+				"effekter": {"aetten": -15}
+			}
+		],
+		"fakta": {
+			"tittel": "Skilsmisse",
+			"tekst": "Kvinner i vikingtiden kunne skille seg. Den arabiske reisende at-Tartushi skrev om dette etter et besøk i handelsbyen Hedeby rundt år 1000. Ifølge den islandske lovsamlingen Grágás kunne en kvinne kreve skilsmisse hvis mannen var voldelig. Men husk at Grágás og sagaene ble skrevet ned lenge etter vikingtiden, så vi vet ikke sikkert hvor vanlig skilsmisse var.",
+			"kilde": "Samtidig utenlandsk kilde (at-Tartushi), islandsk lov (Grágás, 1100-tallet) og sagaer",
+			"lenker": [
+				{"tekst": "Historienet: Vikings – fakta eller fri fantasi? (populærvitenskapelig magasin)", "url": "https://historienet.no/sivilisasjoner/vikinger/vikings-fakta-eller-fri-fantasi"}
+			]
+		}
+	},
+	{
+		"id": "drap",
+		"sted": "tingstedet",
+		"person": "Naboslekta",
+		"tittel": "Drapet i gildet",
+		"tekst": "Under et gilde drepte fetteren din Sigurd naboens sønn Eirik i en full krangel. Nå står Eiriks far og brødre på tingstedet. De vil ha oppreisning.",
+		"valg": [
+			{
+				"tekst": "Betal mannebot på vegne av Sigurd",
+				"resultat": "Du betaler bøtene i sølv. Eiriks slekt godtar det, og freden i bygda holder.",
+				"effekter": {"solv": -15, "bondene": 10}
+			},
+			{
+				"tekst": "Nekt – Sigurd ble provosert",
+				"resultat": "Slekta di er stolt av deg. Men Eiriks frender sverger hevn, og bøndene frykter en lang ættefeide.",
+				"effekter": {"aetten": 10, "bondene": -15, "aere": 5},
+				"flagg": "aettefeide"
+			},
+			{
+				"tekst": "La tinget dømme Sigurd fredløs",
+				"resultat": "Rettferdig, sier bøndene. Men slekta di mener du har sviktet din egen.",
+				"effekter": {"aetten": -15, "bondene": 10, "aere": 5}
+			}
+		],
+		"fakta": {
+			"tittel": "Hevn og mannebot",
+			"tekst": "Et drap var en sak mellom slekter. Drapsmannen kunne gjenopprette freden ved å bli forlikt med slekta til den drepte og betale mannebot, en erstatning til de etterlatte. Ble det ikke forlik, kunne drapet føre til blodhevn og ættefeider som varte lenge. De fleste saker ble løst utenfor tinget, ofte med høvdingene som meklere.",
+			"kilde": "Lover og sagaer (skrevet ned fra 1100-tallet)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Mannebøter", "url": "https://snl.no/manneb%C3%B8ter"},
+				{"tekst": "Store norske leksikon: Ting", "url": "https://snl.no/ting_-_forsamling"}
+			]
+		}
+	},
+	{
+		"id": "tinget",
+		"sted": "tingstedet",
+		"person": "Bøndene i bygda",
+		"tittel": "Vårtinget",
+		"tekst": "Det er tid for tinget. De frie mennene skal møtes for å dømme i saker og avgjøre viktige spørsmål. Hvordan vil du møte opp?",
+		"valg": [
+			{
+				"tekst": "Møt med mange væpnede menn",
+				"resultat": "Du imponerer, men bøndene liker ikke at du prøver å true dem.",
+				"effekter": {"solv": -5, "aere": 10, "bondene": -10}
+			},
+			{
+				"tekst": "Lytt til bøndene og stem med flertallet",
+				"resultat": "Bøndene føler seg hørt. Noen mener likevel at en høvding burde lede, ikke følge.",
+				"effekter": {"bondene": 10, "aere": -5}
+			},
+			{
+				"tekst": "Bli hjemme – du har viktigere ting å gjøre",
+				"resultat": "En høvding som ikke møter på tinget? Folk tror du er feig eller hovmodig.",
+				"effekter": {"bondene": -15, "aere": -10}
+			}
+		],
+		"fakta": {
+			"tittel": "Tinget",
+			"tekst": "Tinget var en samling der de frie mennene møttes for å drøfte felles saker og dømme i rettssaker. Fra midten av 900-tallet sendte bygdene utsendinger, nemndmenn, til de store lagtingene. På Vestlandet var det Gulating, som ifølge Snorre ble ordnet av Håkon den gode rundt 950. Treller og kvinner hørte ikke til de frie mennene som møttes på tinget.",
+			"kilde": "Lov: Gulatingslova, og Snorres kongesagaer (ca. 1230)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Ting", "url": "https://snl.no/ting_-_forsamling"},
+				{"tekst": "Store norske leksikon: Gulating", "url": "https://snl.no/Gulating"},
+				{"tekst": "Store norske leksikon: Lagting", "url": "https://snl.no/lagting"}
+			]
+		}
+	},
+	{
+		"id": "blot",
+		"sted": "offerlunden",
+		"person": "Bøndene i bygda",
+		"tittel": "Midtvinterblotet",
+		"tekst": "Det er midtvinter, og de mørkeste dagene er her. Bøndene venter at du holder blot, slik at gudene gir et godt år og fred.",
+		"valg": [
+			{
+				"tekst": "Hold et stort blot med hest og gilde",
+				"resultat": "Hesten ofres, blodet smøres på gudefigurene, og kjøttet kokes i store gryter. Alle spiser og drikker i tre dager.",
+				"effekter": {"solv": -15, "gudene": 20, "bondene": 10},
+				"flagg": "stort_blot"
+			},
+			{
+				"tekst": "Hold et lite og billig blot",
+				"resultat": "Gudene får sitt, men gildet blir kort. Noen bønder mumler.",
+				"effekter": {"solv": -5, "gudene": 5}
+			},
+			{
+				"tekst": "Dropp blotet i år",
+				"resultat": "Bøndene er sjokkerte. Hva om gudene straffer hele bygda?",
+				"effekter": {"gudene": -20, "bondene": -15},
+				"flagg": "droppet_blot"
+			}
+		],
+		"fakta": {
+			"tittel": "Blot",
+			"tekst": "Blot var en offerhandling til gudene. Dyr ble slaktet, blodet ble smurt på gudefigurene og veggene, og kjøttet ble spist sammen i et stort måltid. I Håkon den godes saga fortelles det om blotene på Lade, og hester nevnes særskilt. Blotene ble ofte arrangert av folk med høy rang i samfunnet.",
+			"kilde": "Saga: Håkon den godes saga i Snorres Heimskringla (ca. 1230)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Blot", "url": "https://snl.no/blot"}
+			]
+		}
+	},
+	{
+		"id": "volve",
+		"sted": "offerlunden",
+		"person": "En fremmed kvinne med stav",
+		"tittel": "Volven kommer",
+		"tekst": "En volve kommer til gården, med en lang stav og en kappe av skinn. Hun tilbyr å spå om det kommende året, men hun forventer et gilde og den beste plassen i hallen.",
+		"valg": [
+			{
+				"tekst": "Hold et gilde og la henne spå",
+				"kostnad": 10,
+				"sjanse": 0.6,
+				"suksess": {
+					"resultat": "Volven driver seid og ser et godt år for bygda. Alle jubler, og gudene virker fornøyde.",
+					"effekter": {"solv": -10, "gudene": 15, "aetten": 5}
+				},
+				"fiasko": {
+					"resultat": "Volven ser sykdom og uår. Stemningen i hallen blir trykket, og folk blir redde.",
+					"effekter": {"solv": -10, "gudene": 5, "bondene": -10}
+				}
+			},
+			{
+				"tekst": "Send henne bort",
+				"resultat": "Volven går uten et ord. Folk hvisker at det bringer ulykke å avvise en volve.",
+				"effekter": {"gudene": -10, "aere": -5}
+			}
+		],
+		"fakta": {
+			"tittel": "Volven og seid",
+			"tekst": "En volve var en kvinne som kunne spå og drive seid, en form for trolldom. I Eirik Raudes saga beskrives en volve som spår om framtiden for folket på en gård. Ved ringborgen Fyrkat i Danmark er det funnet en kvinnegrav med en stav av metall og frø av bulmeurt, en giftig plante som kan gi rus. Mange tolker henne som en volve, men noen mener staven var et steikespidd.",
+			"kilde": "Saga: Eirik Raudes saga (1200-tallet), og arkeologi",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Volve", "url": "https://snl.no/volve"},
+				{"tekst": "Nationalmuseet (Danmark): A seeress from Fyrkat?", "url": "https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/religion-magic-death-and-rituals/a-seeress-from-fyrkat"}
+			]
+		}
+	},
+	{
+		"id": "skald",
+		"sted": "langhuset",
+		"person": "Torleiv, skald",
+		"tittel": "Skaldens tilbud",
+		"tekst": "Skalden Torleiv har reist mellom høvdinger i mange år. Han tilbyr å dikte et kvad om dine bragder, som skal fremføres i alle haller langs kysten. Prisen er en armring av sølv.",
+		"valg": [
+			{
+				"tekst": "Betal – ditt ry skal leve evig",
+				"resultat": "Kvadet er mesterlig. Snart synger folk om deg i fjorder du aldri har sett.",
+				"effekter": {"solv": -15, "aere": 15},
+				"flagg": "kvad"
+			},
+			{
+				"tekst": "Avslå",
+				"resultat": "Torleiv drar til en annen høvding. Kanskje dikter han heller hånende vers om deg?",
+				"effekter": {"aere": -10}
+			}
+		],
+		"fakta": {
+			"tittel": "Skaldene og ettermælet",
+			"tekst": "Skalder var diktere som laget kvad til ære for konger og stormenn, og flere av dem tjente ved kongens hird. Kvadene var fulle av kenninger, omskrivninger der et ord byttes ut med et bilde. For vikingene var ettermælet, det andre sa om deg etter døden, noe av det viktigste et menneske hadde. Diktet Håvamål sier at fe og frender dør, men dommen over den døde lever videre.",
+			"kilde": "Skaldekvad og eddadikt (bevart i håndskrifter fra 1200-tallet)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Skaldedikting", "url": "https://snl.no/skaldedikting"},
+				{"tekst": "Store norske leksikon: Kenning", "url": "https://snl.no/kenning"},
+				{"tekst": "Store norske leksikon: Håvamål", "url": "https://snl.no/H%C3%A5vam%C3%A5l"}
+			]
+		}
+	},
+	{
+		"id": "fostring",
+		"sted": "naustet",
+		"person": "En utsending fra jarlen",
+		"tittel": "Et tilbud om fostring",
+		"tekst": "Et skip legger til ved brygga. Jarlens mann går i land og tilbyr å ta din sønn på sju vintre med seg til jarlens gård, der gutten skal fostres opp sammen med jarlens egne barn.",
+		"valg": [
+			{
+				"tekst": "Si ja – gutten får mektige venner",
+				"resultat": "Sønnen din vokser opp blant mektige folk. Det knytter et bånd mellom deg og jarlen, men du ser lite til gutten.",
+				"effekter": {"aere": 10, "aetten": -5}
+			},
+			{
+				"tekst": "Nei – han skal vokse opp hjemme",
+				"resultat": "Familien er glad, men jarlen merker seg at du avslo.",
+				"effekter": {"aetten": 5, "aere": -5}
+			},
+			{
+				"tekst": "Tilby heller å fostre jarlens sønn selv",
+				"resultat": "Jarlen tar imot. Nå er du knyttet til jarlen, men noen i bygda mener du har bøyd deg for ham.",
+				"effekter": {"solv": -5, "aere": -5, "bondene": 5}
+			}
+		],
+		"fakta": {
+			"tittel": "Fostring og fostbrorskap",
+			"tekst": "Det var vanlig å sende barn for å vokse opp hos en annen familie. Fostring knyttet slekter sammen. Kong Håkon den gode vokste opp hos kong Adalstein (Athelstan) i England. Voksne menn kunne også inngå fostbrorskap, et bindende vennskap. Hvis den ene ble drept, hadde den andre plikt til å hevne ham.",
+			"kilde": "Sagaer: Snorres Heimskringla (ca. 1230)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Håkon den gode", "url": "https://snl.no/H%C3%A5kon_den_gode"},
+				{"tekst": "Store norske leksikon: Fostbrorskap", "url": "https://snl.no/fostbrorskap"}
+			]
+		}
+	},
+	{
+		"id": "gravferd",
+		"sted": "gravhaugene",
+		"person": "Slekta di",
+		"tittel": "Farens gravferd",
+		"tekst": "Faren din, den gamle høvdingen, er død. Hele bygda venter på å se hvordan han blir gravlagt. Det sier noe om hvem du er.",
+		"valg": [
+			{
+				"tekst": "Legg ham i et skip under en stor haug, med våpen og hest",
+				"resultat": "Gravhaugen kan sees langt ut fjorden. Alle forstår at dette er en mektig slekt.",
+				"effekter": {"solv": -20, "aere": 15, "gudene": 10, "aetten": 10},
+				"flagg": "storhaug"
+			},
+			{
+				"tekst": "En enkel grav med sverdet hans",
+				"resultat": "Graven er verdig, men liten. Noen i slekta synes du er gjerrig.",
+				"effekter": {"aetten": -10},
+				"flagg": "liten_grav"
+			}
+		],
+		"fakta": {
+			"tittel": "Gravskikker",
+			"tekst": "En gravhaug er en haug av jord eller stein over en eller flere graver. I Norge ble flest gravhauger bygd i jernalderen. De rikeste ble gravlagt i skip med mange gjenstander, som i Oseberghaugen fra 834 og Gokstadhaugen fra rundt år 900 i Vestfold. Haugen var et synlig minnesmerke for alle. Gravfunn er en av våre viktigste kilder til vikingtiden.",
+			"kilde": "Arkeologi",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Gravhaug", "url": "https://snl.no/gravhaug"},
+				{"tekst": "Store norske leksikon: Osebergfunnet", "url": "https://snl.no/Osebergfunnet"},
+				{"tekst": "Store norske leksikon: Gokstadfunnet", "url": "https://snl.no/Gokstadfunnet"}
+			]
+		}
+	},
+	{
+		"id": "runestein",
+		"sted": "gravhaugene",
+		"person": "Tora, enke",
+		"tittel": "Enkas minnestein",
+		"tekst": "Toras mann døde på et tokt i vest. Hun vil reise en runestein over ham ved veien, slik at alle som går forbi skal huske ham. Hun ber deg om å betale runemesteren.",
+		"valg": [
+			{
+				"tekst": "Betal runemesteren",
+				"resultat": "Steinen blir reist ved veien. Tora takker deg, og bøndene ser at du tar vare på dine folk.",
+				"effekter": {"solv": -10, "aere": 5, "bondene": 10},
+				"flagg": "runestein"
+			},
+			{
+				"tekst": "Det får hun ordne selv",
+				"resultat": "Tora må selge to kyr for å betale. Folk legger merke til det.",
+				"effekter": {"bondene": -10}
+			}
+		],
+		"fakta": {
+			"tittel": "Runesteiner",
+			"tekst": "En runestein er en reist stein med runer risset inn, oftest til minne om en som er død. I vikingtiden brukte man den yngre futharken, som bare hadde 16 tegn. Også kvinner reiste runesteiner. Dynnasteinen fra Hadeland (rundt 1050) ble reist av Gunnvor til minne om datteren Astrid. Gunnvor «gjorde bru» etter henne, og innskriften kaller Astrid den hendigste jenta på Hadeland.",
+			"kilde": "Runeinnskrifter",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Runestein", "url": "https://snl.no/runestein"},
+				{"tekst": "Store norske leksikon: Futhark", "url": "https://snl.no/futhark"},
+				{"tekst": "Store norske leksikon: Dynnasteinen", "url": "https://snl.no/Dynnasteinen"}
+			]
+		}
+	},
+	{
+		"id": "utbering",
+		"sted": "nabogarden",
+		"person": "En fattig bondekone",
+		"tittel": "Barnet som ikke kan fø",
+		"tekst": "En fattig bondefamilie har fått sitt sjette barn, og det er sykt og svakt. Faren vil sette det ut, fordi de ikke kan fø flere munner. Moren ber deg om hjelp.",
+		"valg": [
+			{
+				"tekst": "Gi familien korn, så de kan beholde barnet",
+				"resultat": "Familien beholder barnet. Moren glemmer aldri det du gjorde.",
+				"effekter": {"solv": -10, "bondene": 5, "aere": 5},
+				"flagg": "reddet_barn"
+			},
+			{
+				"tekst": "Det er farens rett å bestemme",
+				"resultat": "Du blander deg ikke. Ifølge skikken er det faren som bestemmer over barnet.",
+				"effekter": {"aere": -5}
+			}
+		],
+		"fakta": {
+			"tittel": "Barneutbering",
+			"tekst": "Å sette ut et nyfødt barn for å dø kalles utbering. I norrøn tid ser det ut til at dette var akseptert under visse vilkår, for eksempel ved stor fattigdom. Da de kristne kirkelovene kom på 1000-tallet, ble det forbudt. Hvor vanlig det var, vet vi ikke. I senere folketro levde forestillingen om utburden, gjenferdet etter et barn som var satt ut.",
+			"kilde": "Lover (kristenrettene) og folketro",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Utburd", "url": "https://snl.no/utburd"}
+			]
+		}
+	},
+	{
+		"id": "primsigning",
+		"sted": "naustet",
+		"person": "En handelsmann fra England",
+		"tittel": "Den kristne handelsmannen",
+		"tekst": "Et handelsskip fra England legger til ved brygga, lastet med fine klær, vin og glass. Handelsmannen er kristen og vil bare handle med deg hvis du lar deg primsigne, slik at en prest tegner korsets tegn over deg.",
+		"valg": [
+			{
+				"tekst": "La deg primsigne – handel er handel",
+				"resultat": "Presten gjør korstegnet over deg, og handelen blir god. Men noen bønder ser skjevt på deg.",
+				"effekter": {"solv": 15, "gudene": -10},
+				"flagg": "kors"
+			},
+			{
+				"tekst": "Nei – du holder fast ved de gamle gudene",
+				"resultat": "Handelsmannen seiler videre. Bøndene er fornøyde med at du holder på den gamle troen.",
+				"effekter": {"gudene": 10, "bondene": 5}
+			}
+		],
+		"fakta": {
+			"tittel": "Primsigning og den nye troen",
+			"tekst": "Å primsigne betydde å tegne korsets tegn over en som ikke var kristen. Det var første steg mot dåp. I misjonstiden i Norge var det ofte en egen handling, og mange ble ikke døpt før på dødsleiet. I Trendgården i Danmark er det funnet en støpeform fra 900-tallet som en smed brukte til å lage både torshammere og kors, og altså solgte til kunder med begge troene.",
+			"kilde": "Sagaer, og arkeologi (støpeformen fra Trendgården)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Primsigne", "url": "https://snl.no/primsigne"},
+				{"tekst": "Nationalmuseet (Danmark): Støpeform med torshammer og kors", "url": "https://samlinger.natmus.dk/do/asset/814"}
+			]
+		}
+	},
+	{
+		"id": "viking",
+		"sted": "naustet",
+		"person": "De unge mennene i bygda",
+		"tittel": "På viking?",
+		"tekst": "Våronna er over. De unge mennene vil seile vestover på tokt i sommer, og de vil låne skipet ditt. «Det finnes rike klostre i vest,» sier de.",
+		"valg": [
+			{
+				"tekst": "Utrust skipet og send dem av sted",
+				"kostnad": 10,
+				"sjanse": 0.6,
+				"suksess": {
+					"resultat": "Skipet kommer hjem om høsten, fullt av sølv og fanger. Alle snakker om toktet.",
+					"effekter": {"solv": 25, "aere": 10, "aetten": -5},
+					"flagg": "skip_bytte"
+				},
+				"fiasko": {
+					"resultat": "Skipet kommer aldri tilbake. I mange gårder sørger de over sønner som er borte.",
+					"effekter": {"solv": -10, "bondene": -15, "aetten": -10},
+					"flagg": "skip_tapt"
+				}
+			},
+			{
+				"tekst": "Nei – vi trenger folk hjemme til slåtten",
+				"resultat": "De unge mennene er skuffet, men høyet kommer i hus, og dyra klarer seg gjennom vinteren.",
+				"effekter": {"bondene": 5, "aere": -5}
+			}
+		],
+		"fakta": {
+			"tittel": "Å dra i viking",
+			"tekst": "Å dra i viking var en sjøreise for å handle, bosette seg eller plyndre i Vest- eller Øst-Europa. Klosteret på Lindisfarne i England ble plyndret 8. juni 793. Det er et av de første kjente vikingangrepene, og regnes ofte som starten på vikingtiden. På toktene ble det også tatt fanger, og mange av dem endte som treller.",
+			"kilde": "Samtidige kilder fra England og Frankrike, og arkeologi",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Viking", "url": "https://snl.no/viking"},
+				{"tekst": "Store norske leksikon: Lindisfarne", "url": "https://snl.no/Lindisfarne"},
+				{"tekst": "Store norske leksikon: Trell", "url": "https://snl.no/trell"}
+			]
+		}
+	},
+	{
+		"id": "gjester",
+		"sted": "langhuset",
+		"person": "Tre fremmede i døra",
+		"tittel": "Reisende i mørket",
+		"tekst": "En kald kveld banker det på døra. Tre reisende står ute i snøen. En av dem er en gammel mann med bredbremmet hatt, blå kappe og bare ett øye.",
+		"valg": [
+			{
+				"tekst": "Ta dem inn og gi dem mat og plass ved ilden",
+				"resultat": "Gjestene spiser og takker. Om morgenen er den gamle mannen borte – uten at noen så ham gå.",
+				"effekter": {"solv": -5, "aere": 10, "gudene": 10},
+				"flagg": "gjestfri"
+			},
+			{
+				"tekst": "Send dem videre",
+				"resultat": "De går ut i mørket igjen. Ryktet om en gjerrig høvding sprer seg raskt.",
+				"effekter": {"aere": -10, "gudene": -5}
+			}
+		],
+		"fakta": {
+			"tittel": "Gjestfrihet",
+			"tekst": "Gjestfrihet var en viktig verdi. Diktet Håvamål gir råd om hvordan man bør leve, og roser den som er gjestmild mot reisende. Ifølge myten går guden Odin noen ganger omkring blant menneskene, med bredbremmet hatt og blå kappe. Odin hadde bare ett øye, fordi han ga det andre for å drikke av Mimes kunnskapsbrønn.",
+			"kilde": "Eddadikt: Håvamål (bevart i håndskriftet Codex Regius, 1200-tallet)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Håvamål", "url": "https://snl.no/H%C3%A5vam%C3%A5l"},
+				{"tekst": "Store norske leksikon: Odin", "url": "https://snl.no/Odin"}
+			]
+		}
+	},
+	{
+		"id": "fredlos",
+		"sted": "skogen",
+		"person": "Gunnar, en fredløs mann",
+		"tittel": "Den fredløse",
+		"tekst": "Midt på natta kommer Gunnar snikende ut av skogen. Han ble dømt fredløs på tinget for et drap. «Gjem meg,» ber han. «De jager meg som et dyr.»",
+		"valg": [
+			{
+				"tekst": "Gjem ham i fjøset",
+				"resultat": "Gunnar overlever natta. Men ryktet går, og bøndene mener du bryter tingets dom.",
+				"effekter": {"aere": 5, "bondene": -15}
+			},
+			{
+				"tekst": "Avvis ham",
+				"resultat": "Gunnar forsvinner inn i skogen igjen. Du har fulgt loven.",
+				"effekter": {"bondene": 5}
+			},
+			{
+				"tekst": "Gi ham til dem som jager ham",
+				"resultat": "Bøndene er fornøyde, men noen synes det er uverdig å forråde en som ber om hjelp.",
+				"effekter": {"bondene": 10, "aere": -5}
+			}
+		],
+		"fakta": {
+			"tittel": "Fredløshet",
+			"tekst": "Den som ble dømt fredløs, mistet lovens vern. Den fredløse mistet eiendommen sin og kunne drepes uten at drapsmannen ble straffet. Det var en av de strengeste straffene i et samfunn uten fengsler og politi. Senere ble fredløshet begrenset til de groveste forbrytelsene.",
+			"kilde": "Lover (skrevet ned fra 1100-tallet) og sagaer",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Fredløshet", "url": "https://snl.no/fredl%C3%B8shet"}
+			]
+		}
+	},
+	{
+		"id": "stender",
+		"sted": "akrene",
+		"person": "Bonden Steinar",
+		"tittel": "Løysingens sønn",
+		"tekst": "Sønnen til en frigitt trell vil gifte seg med datteren til bonden Steinar. De unge er forelsket, men Steinar raser: «Min datter skal ikke gifte seg med trelleætt!» Han vil ha din støtte.",
+		"valg": [
+			{
+				"tekst": "Støtt de unge – han er en flittig mann",
+				"resultat": "Bryllupet blir holdt, men Steinar og flere storbønder er sinte på deg.",
+				"effekter": {"bondene": -10, "aere": 5}
+			},
+			{
+				"tekst": "Støtt Steinar – slik har det alltid vært",
+				"resultat": "Steinar er fornøyd. Løysingens sønn reiser til Island for å finne lykken der.",
+				"effekter": {"bondene": 10}
+			}
+		],
+		"fakta": {
+			"tittel": "Trell, karl og jarl",
+			"tekst": "Samfunnet var delt i lag. I eddadiktet Rigstula fortelles det at guden Rig ble far til tre sønner: Trell, Karl (bonde) og Jarl. Slik ble han stamfar til de tre standene. Diktet viser at folk så på forskjellene mellom standene som naturlige. Trellene ble behandlet som eiendom, mens de fleste bøndene var frie og eide jorda si selv.",
+			"kilde": "Eddadikt: Rigstula",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Rigstula", "url": "https://snl.no/Rigstula"},
+				{"tekst": "Norgeshistorie: Treller, bønder og elite", "url": "https://www.norgeshistorie.no/vikingtid/mennesker/0801-treller-bonder-og-elite.html"}
+			]
+		}
+	},
+	{
+		"id": "holmgang",
+		"sted": "holmen",
+		"person": "Ljot, berserk",
+		"tittel": "Utfordringen",
+		"tekst": "Den fryktede berserken Ljot ror ut til holmen og roper over vannet: «Jeg utfordrer deg til holmgang! Vinner jeg, tar jeg gården din.»",
+		"valg": [
+			{
+				"tekst": "Ta imot utfordringen",
+				"sjanse": 0.5,
+				"suksess": {
+					"resultat": "Du feller Ljot på holmen. Folk vil snakke om denne kampen i lang tid.",
+					"effekter": {"aere": 20, "bondene": 5},
+					"flagg": "vant_holmgang"
+				},
+				"fiasko": {
+					"resultat": "Ljot sårer deg. Du må kjøpe deg fri med mye sølv for å beholde gården.",
+					"effekter": {"aere": -15, "solv": -20}
+				}
+			},
+			{
+				"tekst": "Betal ham for å dra",
+				"resultat": "Ljot drar, men alle vet at du kjøpte deg fri.",
+				"effekter": {"solv": -15, "aere": -10}
+			},
+			{
+				"tekst": "Ta saken til tinget",
+				"resultat": "Tinget dømmer Ljot fredløs. Bøndene setter pris på at du følger loven, men noen kaller deg feig.",
+				"effekter": {"bondene": 10, "aere": -5}
+			}
+		],
+		"fakta": {
+			"tittel": "Holmgang",
+			"tekst": "Holmgang var en tvekamp etter faste regler. Navnet kommer av at kampen ofte ble holdt på en liten holme. Den som vant, ble regnet for å ha rett. I sagaene brukes holmgang også av voldsmenn som vil ta gård og eiendom fra andre. Holmgang ble avskaffet etter at kristendommen ble innført.",
+			"kilde": "Sagaer (skrevet ned på 1200-tallet)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Holmgang", "url": "https://snl.no/holmgang"}
+			]
+		}
+	},
+	{
+		"id": "gilde",
+		"sted": "langhuset",
+		"person": "Gjestene i hallen",
+		"tittel": "Julegildet",
+		"tekst": "Hallen er full til julegildet. Mjøden er klar og kjøttet koker. Nå skal du bestemme hvem som får den nest beste plassen, midt på langveggen rett overfor høysetet ditt.",
+		"valg": [
+			{
+				"tekst": "Storbonden Ottar – han er den mektigste",
+				"resultat": "Ottar nikker fornøyd. De fattigere bøndene merker at de sitter langt nede ved døra.",
+				"effekter": {"aere": 5, "bondene": -5, "solv": 5}
+			},
+			{
+				"tekst": "Fosterbroren din",
+				"resultat": "Slekta di er glad. Ottar ser fornærmet ut og drar tidlig.",
+				"effekter": {"aetten": 10, "aere": -5}
+			},
+			{
+				"tekst": "En fattig bonde som hjalp deg i fjor",
+				"resultat": "Bøndene jubler. Ottar og de andre storbøndene synes du har ydmyket dem.",
+				"effekter": {"bondene": 10, "aere": -10}
+			}
+		],
+		"fakta": {
+			"tittel": "Høysetet og gildehallen",
+			"tekst": "Hvor man satt, viste hvilken rang man hadde. I norrøn tid satt husbonden i høysetet midt på den ene langveggen, og den nest beste plassen var midt på motsatt vegg. På Borg i Lofoten har arkeologer gravd ut et 83 meter langt hus fra vikingtiden, det største vi kjenner. Det var både bolig, fjøs og gildehall.",
+			"kilde": "Sagaer, og arkeologi (høvdingsetet på Borg i Lofoten)",
+			"lenker": [
+				{"tekst": "Store norske leksikon: Høgsete", "url": "https://snl.no/h%C3%B8gsete"},
+				{"tekst": "Store norske leksikon: Borg – høvdingsete i Nordland", "url": "https://snl.no/Borg_-_h%C3%B8vdingsete_i_Nordland"}
+			]
+		}
+	}
+]

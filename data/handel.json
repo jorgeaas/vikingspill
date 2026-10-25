@@ -1,0 +1,193 @@
+{
+	"hjem": [5.3, 60.4],
+	"mal": [
+		{
+			"id": "kaupang",
+			"navn": "Kaupang",
+			"type": "handel",
+			"pos": [10.0, 59.0],
+			"etikett": "hoyre",
+			"rute": [[5.3, 60.4], [4.6, 59.4], [5.6, 58.2], [7.5, 57.8], [9.5, 58.6], [10.0, 59.0]],
+			"tekst": "En kort og trygg reise langs kysten til handelsstedet i Viksfjorden. Du selger skifer, skinn og ull, og kjøper glass, keramikk og sølv.",
+			"kost": {"solv": 5},
+			"sjanse": 0.95,
+			"gevinst": {"solv": 12},
+			"kontakt": 2,
+			"suksess": "Handelen går godt. Kjøpmennene i Kaupang vil gjerne handle med deg igjen.",
+			"fiasko": "En storm ødela lasten. Skipet kom hjem, men tomt.",
+			"fiasko_effekter": {"solv": -5},
+			"fakta": {
+				"tittel": "Kaupang – Norges første by",
+				"tekst": "Kaupang ved Larvik ble anlagt tidlig på 800-tallet og forlatt en gang på 900-tallet. Kjøpmennene her omsatte varer fra et stort område: skifer fra Vestlandet, drikkekar fra Frankerriket, mynter fra den arabiske verden, slavisk keramikk og glassperler fra Bysants. Betalingen skjedde med sølv. Rundt år 980, når spillet foregår, var Kaupang kanskje allerede i ferd med å bli forlatt.",
+				"kilde": "Arkeologi (utgravningene i Kaupang)",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Kaupang", "url": "https://snl.no/Kaupang"},
+					{"tekst": "Norgeshistorie: Vikingtidsbyen Kaupang", "url": "https://www.norgeshistorie.no/vikingtid/0804-vikingtidsbyen-kaupang.html"}
+				]
+			}
+		},
+		{
+			"id": "hedeby",
+			"navn": "Hedeby",
+			"type": "handel",
+			"pos": [9.6, 54.5],
+			"etikett": "under",
+			"rute": [[5.3, 60.4], [4.6, 59.4], [5.6, 58.2], [7.5, 57.8], [10.6, 57.9], [11.4, 57.1], [11.0, 56.1], [10.7, 55.0], [10.0, 54.6], [9.6, 54.5]],
+			"tekst": "En lengre reise sørover til den store handelsbyen ved Sliefjorden. Her møtes kjøpmenn fra Norden, Frankerriket og Østersjøen. På markedet selges også treller.",
+			"kost": {"solv": 10},
+			"sjanse": 0.9,
+			"gevinst": {"solv": 20},
+			"kontakt": 3,
+			"trellmarked": true,
+			"suksess": "Du selger varene dine for godt sølv og knytter kontakter med kjøpmenn fra mange land.",
+			"fiasko": "Sjørøvere i Kattegat tok halve lasten. Mannskapet slapp unna med livet.",
+			"fiasko_effekter": {"solv": -5, "bondene": -5},
+			"fakta": {
+				"tittel": "Hedeby – knutepunkt i nord",
+				"tekst": "Hedeby (Haithabu) lå ved Sliefjorden, nær dagens Schleswig i Tyskland. Byen oppsto på 700-tallet og var et av de viktigste handelssentrene i Norden, sammen med Ribe, Birka og Kaupang. Hedeby ble brent av Harald Hardråde i 1050.",
+				"kilde": "Arkeologi og skriftlige kilder",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Hedeby", "url": "https://snl.no/Hedeby"},
+					{"tekst": "Store norske leksikon: Vikingtiden", "url": "https://snl.no/vikingtiden"}
+				]
+			}
+		},
+		{
+			"id": "dublin",
+			"navn": "Dublin",
+			"type": "handel",
+			"pos": [-6.2, 53.35],
+			"etikett": "under",
+			"rute": [[5.3, 60.4], [2.0, 60.4], [-1.0, 60.2], [-3.0, 59.3], [-5.2, 58.9], [-6.8, 57.5], [-6.5, 55.8], [-5.6, 54.6], [-6.2, 53.35]],
+			"tekst": "Over Nordsjøen og rundt Skottland til vikingbyen Dublin. Her handles det med sølv, våpen, klær – og mennesker.",
+			"kost": {"solv": 10},
+			"sjanse": 0.85,
+			"gevinst": {"solv": 22},
+			"kontakt": 3,
+			"trellmarked": true,
+			"suksess": "Kongen i Dublin tar godt imot deg. Handelen går godt, og du får venner i byen.",
+			"fiasko": "Høststormene i Nordsjøen var harde. Skipet kom hjem, men to mann druknet.",
+			"fiasko_effekter": {"solv": -5, "aetten": -5, "bondene": -5},
+			"fakta": {
+				"tittel": "Dublin – vikingenes by i Irland",
+				"tekst": "Dublin går tilbake til 840-årene, da norske vikinger anla en borg ved munningen av elva Liffey. Byen ble sete for skandinaviske konger og holdt på sin skandinaviske karakter helt til 1100-tallet. Angrepene på Irland var brutale, og forskere mener at fanger fra Irland ble solgt som treller.",
+				"kilde": "Arkeologi og irske annaler",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Dublin", "url": "https://snl.no/Dublin"},
+					{"tekst": "Norgeshistorie: Vikingferdene", "url": "https://www.norgeshistorie.no/vikingtid/0808-vikingferdene.html"}
+				]
+			}
+		},
+		{
+			"id": "bulgar",
+			"navn": "Bulgar ved Volga",
+			"type": "handel",
+			"pos": [49.1, 55.0],
+			"rute": [[5.3, 60.4], [4.6, 59.4], [5.6, 58.2], [7.5, 57.8], [10.6, 57.9], [11.6, 57.0], [12.7, 55.7], [14.5, 55.3], [17.0, 56.5], [19.5, 58.4], [23.0, 59.6], [28.0, 60.0], [32.3, 60.0], [34.0, 58.5], [38.0, 57.5], [44.0, 56.3], [49.1, 55.0]],
+			"tekst": "Den lange østerveien: gjennom Østersjøen, opp elvene i Gardarike og ned Volga til Bulgar. Der møter du kjøpmenn fra kalifatet i Bagdad, som betaler med arabiske sølvmynter. Reisen er farlig og tar et helt år.",
+			"kost": {"solv": 15, "bondene": 10},
+			"sjanse": 0.7,
+			"gevinst": {"solv": 45, "aere": 10},
+			"kontakt": 5,
+			"suksess": "Etter et år kommer skipet hjem, tungt av arabiske sølvmynter. Folk samles for å se på de fremmede skrifttegnene på myntene.",
+			"fiasko": "Skipet ble angrepet ved stryk i elvene i øst. Mange av mennene kom aldri hjem.",
+			"fiasko_effekter": {"bondene": -10, "aetten": -10},
+			"fakta": {
+				"tittel": "Bagdad-sølvet og østerveien",
+				"tekst": "Det meste av sølvet som er funnet fra vikingtidens Skandinavia, er arabiske sølvmynter, dirhemer med kufisk skrift. Sølvet kom fra gruver i Sentral-Asia, og myntene ble fraktet langs elvene gjennom dagens Russland til Norden. Ved Volga handlet nordiske kjøpmenn med folk fra kalifatet i Bagdad. Ibn Fadlan møtte dem der i 921, og skrev at varene deres hovedsakelig var slaver.",
+				"kilde": "Myntfunn, og samtidig utenlandsk kilde (Ibn Fadlan)",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Kufiske mynter", "url": "https://snl.no/kufiske_mynter"},
+					{"tekst": "Store norske leksikon: Ahmad ibn Fadlan", "url": "https://snl.no/Ahmad_ibn_Fadlan"},
+					{"tekst": "Norgeshistorie: Ibn Fadlans reisebeskrivelse", "url": "https://www.norgeshistorie.no/kilder/vikingtid/K0809-Ibn-Fadlans-reisebeskrivelse.html"}
+				]
+			}
+		},
+		{
+			"id": "england",
+			"navn": "Northumbria (England)",
+			"type": "tokt",
+			"pos": [-1.7, 55.6],
+			"rute": [[5.3, 60.4], [2.5, 58.6], [0.3, 56.6], [-1.7, 55.6]],
+			"tekst": "Rett vestover til kysten av Northumbria, der klostre og landsbyer ligger nær sjøen. Kort reise, rikt bytte, men engelskmennene husker hvem som kom.",
+			"kost": {"bondene": 10},
+			"sjanse": 0.5,
+			"gevinst": {"solv": 30, "aere": 10, "aetten": -5},
+			"fanger": "england",
+			"fiender": 2,
+			"skip_tap": 0.35,
+			"suksess": "Dere kom overraskende og dro før forsvarerne rakk å samle seg. Skipet er tungt av sølv og fanger, men to av mennene dine ble drept i kampen.",
+			"fiasko": "Angrepet ble slått tilbake. Flere menn ble drept på stranda.",
+			"fiasko_effekter": {"bondene": -15, "aetten": -15, "aere": -10},
+			"fakta": {
+				"tittel": "Tokt mot England",
+				"tekst": "Angrepet på klosteret Lindisfarne i 793 regnes ofte som starten på vikingtiden. Senere ble angrepene større: I 866 inntok vikinger York, som de kalte Jorvik. Engelskmennene organiserte forsvar mot angrepene, og i årene 991–1014 betalte de vikingene danegjeld, til sammen rundt 60 tonn sølv.",
+				"kilde": "Samtidige engelske kilder (blant annet Den angelsaksiske krøniken) og arkeologi",
+				"lenker": [
+					{"tekst": "Norgeshistorie: Vikingferdene", "url": "https://www.norgeshistorie.no/vikingtid/0808-vikingferdene.html"},
+					{"tekst": "Store norske leksikon: Lindisfarne", "url": "https://snl.no/Lindisfarne"}
+				]
+			}
+		},
+		{
+			"id": "irland",
+			"navn": "Irske klostre",
+			"type": "tokt",
+			"pos": [-8.4, 54.3],
+			"rute": [[5.3, 60.4], [2.0, 60.4], [-1.0, 60.2], [-3.0, 59.3], [-5.2, 58.9], [-7.3, 56.8], [-8.0, 55.5], [-8.4, 54.3]],
+			"tekst": "Rundt Skottland til klostrene på Irlands nordvestkyst. Klostrene er rike på sølv og helligdommer, men irske konger slår hardt tilbake.",
+			"kost": {"bondene": 10},
+			"sjanse": 0.45,
+			"gevinst": {"solv": 28, "aere": 10, "aetten": -5},
+			"fanger": "irland",
+			"fiender": 2,
+			"skip_tap": 0.4,
+			"suksess": "Klosteret hadde lite forsvar. Dere tok sølv, et forgylt relikvieskrin – og mennesker. På veien hjem døde en av mennene av sårene sine.",
+			"fiasko": "En irsk konge ventet på dere. Bare halve mannskapet kom seg tilbake til skipet.",
+			"fiasko_effekter": {"bondene": -15, "aetten": -15, "aere": -10},
+			"fakta": {
+				"tittel": "Tokt mot Irland",
+				"tekst": "Angrepene på Irland i tiårene etter 793 var brutale. Klostrene var rike og lå ofte nær kysten. Utenlandske treller i Norden var for det meste tatt til fange på slike tokt og krigstog. Etter hvert slo vikingene seg også ned i Irland, blant annet i Dublin.",
+				"kilde": "Irske annaler og arkeologi",
+				"lenker": [
+					{"tekst": "Norgeshistorie: Vikingferdene", "url": "https://www.norgeshistorie.no/vikingtid/0808-vikingferdene.html"},
+					{"tekst": "Store norske leksikon: Trell", "url": "https://snl.no/trell"}
+				]
+			}
+		},
+		{
+			"id": "frankerriket",
+			"navn": "Seinen (Frankerriket)",
+			"type": "tokt",
+			"pos": [2.35, 48.85],
+			"rute": [[5.3, 60.4], [4.0, 57.0], [3.0, 53.5], [1.8, 51.2], [0.2, 49.6], [1.5, 49.2], [2.35, 48.85]],
+			"tekst": "Den lengste og farligste toktreisen: sørover langs kysten og opp elva Seinen mot rike byer og klostre. Stort bytte, men frankerne har store hærer.",
+			"kost": {"bondene": 15},
+			"sjanse": 0.35,
+			"gevinst": {"solv": 45, "aere": 15, "aetten": -5, "bondene": -5},
+			"fanger": "frankerriket",
+			"fiender": 3,
+			"skip_tap": 0.5,
+			"suksess": "Byene langs elva betalte dere i sølv for å dra videre. Dette blir det sunget om – men flere av mennene dine ligger begravd ved Seinen.",
+			"fiasko": "En frankisk hær stengte elva. Dere måtte flykte, og mange ble igjen.",
+			"fiasko_effekter": {"bondene": -20, "aetten": -15, "aere": -10},
+			"fakta": {
+				"tittel": "Tokt mot Frankerriket",
+				"tekst": "I tiårene etter 793 angrep vikinger også Frankerriket. Fra 840-årene samlet de seg i store flåter, og i 845 ble Paris inntatt for første gang. Fra 850-årene overvintret vikingene i Frankerriket. Brev og annaler viser at angrepene spredte enorm frykt.",
+				"kilde": "Frankiske annaler og brev",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Vikingtiden", "url": "https://snl.no/vikingtiden"},
+					{"tekst": "Norgeshistorie: Vikingferdene", "url": "https://www.norgeshistorie.no/vikingtid/0808-vikingferdene.html"}
+				]
+			}
+		}
+	],
+	"fakta_plyndring": {
+		"tittel": "Rane, bytte, kjøpe, gi",
+		"tekst": "Munkene skrev om vikingenes plyndring, men plyndring var langt fra den eneste inntektskilden. Vikingtidens økonomi bygde også på varebytte, kjøp og salg, krig og gaver. Sølv i skattefunn kan komme fra plyndring, men også fra handel eller skatt, så vi vet ofte ikke hvor det kom fra. Betalingssølvet ble veid med vektlodd og skålvekter.",
+		"kilde": "Arkeologi og skriftlige kilder",
+		"lenker": [
+			{"tekst": "Norgeshistorie: Rane, bytte, kjøpe, gi", "url": "https://www.norgeshistorie.no/vikingtid/0806-rane-bytte-kjope-gi.html"}
+		]
+	}
+}

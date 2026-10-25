@@ -1,0 +1,89 @@
+{
+	"arbeid": 4,
+	"flukt": 0.06,
+	"fakta": {
+		"tittel": "Treller og trellehandel",
+		"tekst": "Treller kan ha utgjort en fjerdedel, kanskje nærmere en tredjedel, av befolkningen i vikingtiden. De ble regnet som eiendom og kunne kjøpes og selges. Utenlandske treller var for det meste tatt til fange på tokt og krigstog. Mennesker var en viktig handelsvare: Den arabiske utsendingen Ibn Fadlan møtte i 921 nordiske handelsmenn ved Volga, og varene de førte nedover elva var hovedsakelig slaver.",
+		"kilde": "Lover, samtidig utenlandsk kilde (Ibn Fadlan) og arkeologi",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Trell", "url": "https://snl.no/trell"},
+			{"tekst": "Store norske leksikon: Vikingtiden", "url": "https://snl.no/vikingtiden"},
+			{"tekst": "Store norske leksikon: Ahmad ibn Fadlan", "url": "https://snl.no/Ahmad_ibn_Fadlan"},
+			{"tekst": "Norgeshistorie: Ibn Fadlans reisebeskrivelse (kildeutdrag)", "url": "https://www.norgeshistorie.no/kilder/vikingtid/K0809-Ibn-Fadlans-reisebeskrivelse.html"}
+		]
+	},
+	"fakta_rettigheter": {
+		"tittel": "Treller uten rettigheter",
+		"tekst": "Treller hadde ikke de rettighetene frie mennesker hadde. Ifølge sagaene drepte Håkon jarls trell Kark herren sin i 995, men Kark ble selv drept: For en trell var det dødsstraff å svike herren sin. Ikke alle treller kom fra utlandet. Etter de eldste lovene kunne frie nordmenn bli treller, skuldarmenn, hvis de ikke kunne betale gjelden sin. Gulatingslovene fra 1160 forbød å selge treller ut av landet, og i Magnus Lagabøtes landslov fra 1274 finnes ikke treller lenger.",
+		"kilde": "Lover og sagaer",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Trell", "url": "https://snl.no/trell"},
+			{"tekst": "Store norske leksikon: Slaveri i middelalderen", "url": "https://snl.no/slaveri_i_middelalderen"}
+		]
+	},
+	"start": [
+		{
+			"id": "kare",
+			"navn": "Kåre",
+			"alder": 34,
+			"opphav": "Født på gården",
+			"historie": "Moren hans ble tatt til fange på et tokt i Irland, og Kåre har aldri vært noe annet sted enn her. Han kan alle stiene i skogen, og om kveldene synger han sangene moren lærte ham, på et språk ingen andre på gården forstår.",
+			"verdi": 12,
+			"arbeid": 5,
+			"flukt": 0.03
+		},
+		{
+			"id": "brigit",
+			"navn": "Brigit",
+			"alder": 16,
+			"opphav": "Irland",
+			"historie": "Hun ble tatt fra en gård i Irland for to somre siden, sammen med lillebroren. Broren ble solgt videre på markedet i Dublin. Hver gang et skip legger til, spør hun om noen har sett ham.",
+			"verdi": 12,
+			"arbeid": 4,
+			"flukt": 0.15
+		},
+		{
+			"id": "gyda",
+			"navn": "Gyda",
+			"alder": 51,
+			"opphav": "Født på gården",
+			"historie": "Hun er født trell, som moren og mormoren. I over førti år har hun stelt kyrne her, og hun kjenner hver ku ved navn. Hendene hennes er krokete av arbeid.",
+			"verdi": 4,
+			"arbeid": 2,
+			"flukt": 0.0
+		},
+		{
+			"id": "eyvind",
+			"navn": "Eyvind",
+			"alder": 29,
+			"opphav": "Nabobygda – gjeldstrell",
+			"historie": "Han var en fri bonde, men etter to uår kunne han ikke betale det han skyldte faren din. Nå arbeider han som trell for gjelden. Kona og barna hans bor fortsatt på den lille gården hans, en halv dags gange herfra.",
+			"verdi": 10,
+			"arbeid": 5,
+			"flukt": 0.12
+		}
+	],
+	"fanger": {
+		"england": [
+			{"id": "aelfwine", "navn": "Ælfwine", "alder": 12, "opphav": "Northumbria, England", "historie": "En gjetergutt som ble tatt mens han passet sauene ved kysten. Han gråter om nettene og ber bønner på et språk du ikke forstår.", "verdi": 8, "arbeid": 2, "flukt": 0.1},
+			{"id": "eadgyth", "navn": "Eadgyth", "alder": 25, "opphav": "Northumbria, England", "historie": "Hun vevde klær i en landsby ved et kloster. Mannen hennes ble drept den dagen hun ble tatt.", "verdi": 12, "arbeid": 4, "flukt": 0.08},
+			{"id": "wulfstan", "navn": "Wulfstan", "alder": 36, "opphav": "Northumbria, England", "historie": "En fisker som prøvde å forsvare båten sin. Han har et arr over hele kinnet, og han ser alltid ut over havet mot vest.", "verdi": 12, "arbeid": 5, "flukt": 0.15}
+		],
+		"irland": [
+			{"id": "mael", "navn": "Máel", "alder": 40, "opphav": "Irland", "historie": "En munk som ble tatt fra klosteret sitt. Han kan lese og skrive, noe ingen andre på gården kan. Han risser små kors i veggen over der han sover.", "verdi": 10, "arbeid": 3, "flukt": 0.05},
+			{"id": "lasair", "navn": "Lasair", "alder": 15, "opphav": "Irland", "historie": "Datteren til en irsk bonde. Hun prøvde å rømme to ganger på skipet over havet.", "verdi": 12, "arbeid": 4, "flukt": 0.2},
+			{"id": "muirgel", "navn": "Muirgel", "alder": 20, "opphav": "Irland", "historie": "Hun ble tatt sammen med søsteren sin, men søsteren endte på et annet skip. Hun vet ikke om søsteren lever.", "verdi": 12, "arbeid": 4, "flukt": 0.12}
+		],
+		"frankerriket": [
+			{"id": "ermentrude", "navn": "Ermentrude", "alder": 30, "opphav": "Ved Seinen, Frankerriket", "historie": "Hun ble tatt fra en by ved elva Seinen. Hjemme har hun to små barn, og hun vet ikke hva som har skjedd med dem.", "verdi": 12, "arbeid": 4, "flukt": 0.12},
+			{"id": "odo", "navn": "Odo", "alder": 19, "opphav": "Ved Seinen, Frankerriket", "historie": "En ung smedsvenn som var på vei til markedet da skipene kom opp elva. Han er sterk, men snakker aldri med noen.", "verdi": 14, "arbeid": 6, "flukt": 0.15},
+			{"id": "hildegard", "navn": "Hildegard", "alder": 45, "opphav": "Ved Seinen, Frankerriket", "historie": "Hun var husholderske for en prest. Hun kan mye om urter og sårstell, og har allerede hjulpet to av dine menn med betente sår.", "verdi": 10, "arbeid": 4, "flukt": 0.05}
+		],
+		"marked": [
+			{"id": "vojslav", "navn": "Vojslav", "alder": 22, "opphav": "Slavisk folk ved Østersjøen", "historie": "Han ble tatt i en krig mellom stammene og solgt videre. Han har allerede vært eid av tre ulike menn.", "verdi": 12, "arbeid": 5, "flukt": 0.12},
+			{"id": "gormflaith", "navn": "Gormflaith", "alder": 18, "opphav": "Ukjent", "historie": "Hun ble kjøpt på markedet. Ingen vet hvor hun kommer fra, og hun sier nesten ingenting.", "verdi": 12, "arbeid": 4, "flukt": 0.08},
+			{"id": "thorgils", "navn": "Torgils", "alder": 28, "opphav": "Norge", "historie": "En nordmann som ble tatt til fange i en feide mellom to høvdinger og solgt som trell. Han kjenner språket og skikkene her, og drømmer om å komme hjem.", "verdi": 12, "arbeid": 5, "flukt": 0.15},
+			{"id": "asta", "navn": "Åsta", "alder": 24, "opphav": "Norge – solgt for gjeld", "historie": "Faren hennes skyldte en storbonde mer enn han kunne betale, og Åsta ble solgt for å dekke gjelden. Hun skammer seg mer enn hun sørger.", "verdi": 12, "arbeid": 4, "flukt": 0.08}
+		]
+	}
+}

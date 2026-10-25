@@ -1,0 +1,216 @@
+{
+	"fakta": {
+		"tittel": "Makt bygd på lojalitet",
+		"tekst": "En høvding i vikingtiden hadde ingen hær, politi eller skatteetat. Makten bygde på personlige bånd: slekt, venner og bønder som var lojale fordi høvdingen ga gaver, holdt gilder og beskyttet dem. Gaver bygde og holdt ved like vennskap. På tinget møttes de frie mennene, og der måtte høvdingen vinne støtte for sakene sine. Ifølge sagaene ble selv Håkon jarl drept under en bondeoppstand i 995.",
+		"kilde": "Lover, sagaer og arkeologi",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Ting", "url": "https://snl.no/ting_-_forsamling"},
+			{"tekst": "Norgeshistorie: Rane, bytte, kjøpe, gi", "url": "https://www.norgeshistorie.no/vikingtid/0806-rane-bytte-kjope-gi.html"},
+			{"tekst": "Store norske leksikon: Håkon jarl", "url": "https://snl.no/H%C3%A5kon_jarl"}
+		]
+	},
+	"paavirkning": [
+		{"id": "aetten", "tekst": "Be slekta mobilisere for deg", "kost": {"aetten": 10}, "stotte": 15},
+		{"id": "gaver", "tekst": "Gi gaver til storbøndene", "kost": {"solv": 10}, "stotte": 10},
+		{"id": "aere", "tekst": "Tal selv – sett æren din inn på saken", "kost": {"aere": 5}, "stotte": 8}
+	],
+	"faste": [
+		{
+			"id": "leidang",
+			"vinter": 3,
+			"tittel": "Jarlen krever leidang",
+			"person": "Lagmannen kaller inn til ting",
+			"tekst": "Bud fra Håkon jarl: Bygda skal stille skip og menn til jarlens leidang neste sommer. Bøndene er delt. Noen vil holde seg inne med jarlen, andre vil ikke sende sønnene sine ut i krig for ham.",
+			"valg": [
+				{
+					"tekst": "Gå med på jarlens krav",
+					"motstand": 45,
+					"resultat": "Tinget går med på kravet. Jarlen sender deg en gullring som takk, og ryktet ditt stiger.",
+					"effekter": {"aere": 10, "solv": 10, "bondene": -5}
+				},
+				{
+					"tekst": "Nekt – bygda trenger mennene selv",
+					"motstand": 55,
+					"resultat": "Tinget står samlet mot jarlen. Bøndene er stolte, men jarlen glemmer ikke.",
+					"effekter": {"bondene": 10, "aere": 5},
+					"fiender": 1
+				}
+			],
+			"fakta": {
+				"tittel": "Leidang",
+				"tekst": "Leidang var et system der kystbygdene måtte stille skip, mannskap og forsyninger til kongen når han trengte det. Ifølge tradisjonen ble det innført av Håkon den gode, og det fantes trolig i en eller annen form på slutten av 900-tallet. Leidangen vokste trolig fram av avtaler mellom konger og mektige høvdinger og bønder langs kysten. Senere ble den en fast skatt.",
+				"kilde": "Lover (landskapslovene fra 1200-tallet) og sagaer",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Leidang", "url": "https://snl.no/leidang"},
+					{"tekst": "Store norske leksikon: Håkon jarl", "url": "https://snl.no/H%C3%A5kon_jarl"}
+				]
+			}
+		},
+		{
+			"id": "felles_tokt",
+			"vinter": 5,
+			"tittel": "Hvor skal bygdas skip seile?",
+			"person": "Lagmannen kaller inn til ting",
+			"tekst": "Bøndene vil bruke sommeren til en felles ferd med skipene i bygda. Men hvor skal de dra? Tinget skal bestemme.",
+			"valg": [
+				{
+					"tekst": "På tokt vestover – rask rikdom",
+					"motstand": 50,
+					"resultat": "Tinget stemmer for tokt. Bygdas skip seiler vestover og kommer hjem med sølv. Men i vest har dere fått nye fiender.",
+					"effekter": {"solv": 25, "aere": 10},
+					"fiender": 2
+				},
+				{
+					"tekst": "Til handel i Hedeby – trygg inntekt",
+					"motstand": 40,
+					"resultat": "Tinget velger handel. Bygdas kjøpmenn knytter faste forbindelser i Hedeby.",
+					"effekter": {"solv": 10, "bondene": 5},
+					"kontakt": 3
+				},
+				{
+					"tekst": "Bli hjemme og passe gårdene",
+					"motstand": 30,
+					"resultat": "Tinget vil ikke risikere noe i år. Gårdene blir godt passet, men de unge mennene er misfornøyde.",
+					"effekter": {"bondene": 5, "aere": -5}
+				}
+			],
+			"fakta": {
+				"tittel": "Rane, bytte, kjøpe, gi",
+				"tekst": "Munkene skrev om vikingenes plyndring, men plyndring var langt fra den eneste inntektskilden. Vikingtidens økonomi bygde også på varebytte, kjøp og salg, krig og gaver. Gaver knyttet mennesker sammen: Høvdinger belønnet følget sitt med kostbare gjenstander.",
+				"kilde": "Arkeologi og skriftlige kilder",
+				"lenker": [
+					{"tekst": "Norgeshistorie: Rane, bytte, kjøpe, gi", "url": "https://www.norgeshistorie.no/vikingtid/0806-rane-bytte-kjope-gi.html"},
+					{"tekst": "Norgeshistorie: Vikingferdene", "url": "https://www.norgeshistorie.no/vikingtid/0808-vikingferdene.html"}
+				]
+			}
+		},
+		{
+			"id": "lov_bot",
+			"vinter": 7,
+			"tittel": "Ny lov: bøter i stedet for hevn",
+			"person": "Lagmannen kaller inn til ting",
+			"tekst": "Lagmannen foreslår en ny lov: Den som dreper, skal betale fast mannebot til den dreptes slekt, og slekta skal ikke ta hevn. Mange bønder vil ha fred, men de store slektene vil ikke gi fra seg retten til hevn.",
+			"valg": [
+				{
+					"tekst": "Støtt loven – fred i bygda",
+					"motstand": 55,
+					"resultat": "Loven blir vedtatt. Bøndene er glade for fred, men slekta di mener du har gitt bort retten til å forsvare ætten.",
+					"effekter": {"bondene": 10, "aere": 5, "aetten": -10}
+				},
+				{
+					"tekst": "Gå imot – ætten har rett til hevn",
+					"motstand": 45,
+					"resultat": "Loven faller. Slekta di er fornøyd, men mange bønder frykter nye ættefeider.",
+					"effekter": {"aetten": 10, "bondene": -5}
+				}
+			],
+			"fakta": {
+				"tittel": "Fra hevn til lov",
+				"tekst": "Et drap kunne føre til blodhevn og ættefeider som varte lenge. Drapsmannen kunne gjenopprette freden ved å bli forlikt med slekta til den drepte og betale mannebot. Lovene på lagtingene, som Gulatingslova, hadde regler for slike bøter. Lovene ble overlevert muntlig til de ble skrevet ned rundt år 1100.",
+				"kilde": "Lov: Gulatingslova",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Mannebøter", "url": "https://snl.no/manneb%C3%B8ter"},
+					{"tekst": "Store norske leksikon: Gulatingslova", "url": "https://snl.no/Gulatingsloven"},
+					{"tekst": "Store norske leksikon: Lagting", "url": "https://snl.no/lagting"}
+				]
+			}
+		}
+	],
+	"forslag": [
+		{
+			"id": "forsvar",
+			"tittel": "Felles forsvar mot hevntokt",
+			"tekst": "Fiender fra vest kan komme når som helst. Du foreslår at alle gårdene skal stille menn og våpen, og holde vakt langs kysten om sommeren.",
+			"valg": [
+				{
+					"tekst": "Legg fram forslaget",
+					"motstand": 45,
+					"resultat": "Tinget vedtar felles forsvar. Fiendene dine vet at bygda nå står samlet, og færre våger å angripe.",
+					"effekter": {"bondene": -5, "aere": 5},
+					"fiender": -2
+				}
+			],
+			"fakta_ref": "leidang"
+		},
+		{
+			"id": "marked",
+			"tittel": "Et fast marked i bygda",
+			"tekst": "Du foreslår at bygda skal ha et fast marked hver høst ved tingstedet, der kjøpmenn fra andre bygder og land kan komme og handle i fred.",
+			"valg": [
+				{
+					"tekst": "Legg fram forslaget",
+					"motstand": 55,
+					"resultat": "Tinget sier ja. Hver høst kommer kjøpmenn til markedet, og noe av handelen gir sølv til deg.",
+					"effekter": {"bondene": 5},
+					"flagg": "marked"
+				}
+			],
+			"fakta_ref": "handel_kaupang"
+		},
+		{
+			"id": "misjon",
+			"tittel": "Ta imot de kristne misjonærene",
+			"tekst": "To prester fra England har kommet til bygda. De vil preke om Kvitekrist og bygge et lite kirkehus. Mange bønder er redde for at de gamle gudene skal bli sinte.",
+			"valg": [
+				{
+					"tekst": "Legg fram forslaget",
+					"motstand": 70,
+					"resultat": "Tinget lar prestene bli. Handelsfolk fra kristne land kommer oftere, men de som holder på de gamle gudene, ser mørkt på det.",
+					"effekter": {"gudene": -15, "aere": 5, "solv": 10},
+					"flagg": "kors"
+				}
+			],
+			"fakta_ref": "primsigning"
+		},
+		{
+			"id": "skipsskatt",
+			"tittel": "Skatt til et felles skip",
+			"tekst": "Du foreslår at alle gårdene i bygda skal betale litt hver, slik at bygda har sølv til skip og forsvar.",
+			"valg": [
+				{
+					"tekst": "Legg fram forslaget",
+					"motstand": 55,
+					"resultat": "Tinget vedtar skatten. Sølvet samles inn hos deg, men ikke alle bøndene betaler med glede.",
+					"effekter": {"solv": 20, "bondene": -5}
+				}
+			],
+			"fakta_ref": "leidang"
+		},
+		{
+			"id": "fredlos",
+			"tittel": "Lys en voldsmann fredløs",
+			"tekst": "En voldsmann har plaget gårdene i bygda. Du vil at tinget skal dømme ham fredløs.",
+			"valg": [
+				{
+					"tekst": "Legg fram saken",
+					"motstand": 35,
+					"resultat": "Tinget dømmer voldsmannen fredløs. Bøndene ser at du beskytter dem.",
+					"effekter": {"bondene": 10, "aere": 5}
+				}
+			],
+			"fakta": {
+				"tittel": "Fredløshet",
+				"tekst": "Den som ble dømt fredløs, mistet lovens vern. Den fredløse mistet eiendommen sin og kunne drepes uten at drapsmannen ble straffet. Det var en av de strengeste straffene i et samfunn uten fengsler og politi.",
+				"kilde": "Lover og sagaer",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Fredløshet", "url": "https://snl.no/fredl%C3%B8shet"}
+				]
+			}
+		},
+		{
+			"id": "fellestokt",
+			"tittel": "Felles tokt med nabobygdene",
+			"tekst": "Du foreslår at bygdene skal gå sammen om ditt neste tokt. Da stiller nabobygdene med mannskap, og du slipper å bruke dine egne bønder.",
+			"valg": [
+				{
+					"tekst": "Legg fram forslaget",
+					"motstand": 50,
+					"resultat": "Tinget sier ja. Neste tokt du sender, får mannskap fra nabobygdene.",
+					"effekter": {"aere": 5},
+					"flagg": "felles_tokt"
+				}
+			],
+			"fakta_ref": "felles_tokt"
+		}
+	]
+}

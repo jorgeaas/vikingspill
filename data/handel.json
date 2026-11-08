@@ -117,8 +117,8 @@
 			"fiender": 2,
 			"skip_tap": 0.35,
 			"suksess": "Dere kom overraskende og dro før forsvarerne rakk å samle seg. Skipet er tungt av sølv og fanger, men to av mennene dine ble drept i kampen.",
-			"fiasko": "Angrepet ble slått tilbake. Flere menn ble drept på stranda.",
-			"fiasko_effekter": {"bondene": -15, "aetten": -15, "aere": -10},
+			"fiasko": "Angrepet ble slått tilbake. Flere menn ble drept på stranda. Hjemme sier folk at gudene var imot dere.",
+			"fiasko_effekter": {"bondene": -15, "aetten": -15, "aere": -10, "gudene": -5},
 			"fakta": {
 				"tittel": "Tokt mot England",
 				"tekst": "Angrepet på klosteret Lindisfarne i 793 regnes ofte som starten på vikingtiden. Senere ble angrepene større: I 866 inntok vikinger York, som de kalte Jorvik. Engelskmennene organiserte forsvar mot angrepene, og i årene 991–1014 betalte de vikingene danegjeld, til sammen rundt 60 tonn sølv.",
@@ -143,8 +143,8 @@
 			"fiender": 2,
 			"skip_tap": 0.4,
 			"suksess": "Klosteret hadde lite forsvar. Dere tok sølv, et forgylt relikvieskrin – og mennesker. På veien hjem døde en av mennene av sårene sine.",
-			"fiasko": "En irsk konge ventet på dere. Bare halve mannskapet kom seg tilbake til skipet.",
-			"fiasko_effekter": {"bondene": -15, "aetten": -15, "aere": -10},
+			"fiasko": "En irsk konge ventet på dere. Bare halve mannskapet kom seg tilbake til skipet. Hjemme sier folk at gudene var imot dere.",
+			"fiasko_effekter": {"bondene": -15, "aetten": -15, "aere": -10, "gudene": -5},
 			"fakta": {
 				"tittel": "Tokt mot Irland",
 				"tekst": "Angrepene på Irland i tiårene etter 793 var brutale. Klostrene var rike og lå ofte nær kysten. Utenlandske treller i Norden var for det meste tatt til fange på slike tokt og krigstog. Etter hvert slo vikingene seg også ned i Irland, blant annet i Dublin.",
@@ -169,8 +169,8 @@
 			"fiender": 3,
 			"skip_tap": 0.5,
 			"suksess": "Byene langs elva betalte dere i sølv for å dra videre. Dette blir det sunget om – men flere av mennene dine ligger begravd ved Seinen.",
-			"fiasko": "En frankisk hær stengte elva. Dere måtte flykte, og mange ble igjen.",
-			"fiasko_effekter": {"bondene": -20, "aetten": -15, "aere": -10},
+			"fiasko": "En frankisk hær stengte elva. Dere måtte flykte, og mange ble igjen. Hjemme sier folk at gudene var imot dere.",
+			"fiasko_effekter": {"bondene": -20, "aetten": -15, "aere": -10, "gudene": -5},
 			"fakta": {
 				"tittel": "Tokt mot Frankerriket",
 				"tekst": "I tiårene etter 793 angrep vikinger også Frankerriket. Fra 840-årene samlet de seg i store flåter, og i 845 ble Paris inntatt for første gang. Fra 850-årene overvintret vikingene i Frankerriket. Brev og annaler viser at angrepene spredte enorm frykt.",

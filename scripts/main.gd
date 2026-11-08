@@ -99,6 +99,13 @@ var ting_valg: Dictionary = {}
 var ting_h = null
 var ting_bonus := 0
 var ting_brukte := {}
+## Gudene krever nye offer: Gunsten synker litt hver vinter.
+const GUDER_FORFALL := 6
+const GUDER_FORFALL_MED_OFFERLUND := 3
+const GUDER_FORFALL_KRISTEN := 3
+## Hvor mye gudenes gunst kan endre sjansen for å lykkes (ved gunst 0 eller 100).
+const GUDER_MAKS_BONUS := 0.2
+
 ## Tinget er usikkert: Stemningen kan svinge, og en rival kan tale mot deg i siste liten.
 const TING_SVING := 12
 const TING_RIVAL_SJANSE := 0.3
@@ -257,6 +264,16 @@ func _effekt_tekst(effekter: Dictionary) -> String:
 		var tegn := "+" if v > 0 else "−"
 		deler.append("[color=#%s][b]%s%d %s[/b][/color]" % [farge.to_html(false), tegn, abs(v), NAVN[nokkel]])
 	return "     ".join(deler)
+
+
+## Folk trodde gudene avgjorde om en ferd eller en kamp gikk godt.
+## Gunst 50 gir ingen endring, 100 gir +20 prosentpoeng og 0 gir −20.
+func _gudebonus() -> float:
+	return clampf((float(stats["gudene"]) - 50.0) / 50.0 * GUDER_MAKS_BONUS, -GUDER_MAKS_BONUS, GUDER_MAKS_BONUS)
+
+
+func _sjanse(grunnsjanse: float) -> float:
+	return clampf(grunnsjanse + _gudebonus(), 0.05, 0.95)
 
 
 func _tapt() -> String:
@@ -789,6 +806,13 @@ func _start_vinter() -> void:
 	for d in deler:
 		sum += d[1]
 	stats["solv"] += sum
+	# Gudene glemmer fort: Uten nye offer synker gunsten.
+	var forfall := 0
+	if vinter > 1:
+		forfall = GUDER_FORFALL_MED_OFFERLUND if bygget.has("offerlunden") else GUDER_FORFALL
+		if flagg.has("kors"):
+			forfall += GUDER_FORFALL_KRISTEN
+		_endre({"gudene": -forfall})
 	var hevn_tap := {"solv": -10, "bondene": -10, "aetten": -5}
 	if hevn:
 		_endre(hevn_tap)
@@ -804,6 +828,15 @@ func _start_vinter() -> void:
 		for d in deler:
 			linjer.append("%s: [b]+%d sølv[/b]" % d)
 		innhold.add_child(_rik("\n".join(linjer) + "\n[color=#%s][b]Til sammen: +%d sølv[/b][/color]" % [C_PLUSS.to_html(false), sum]))
+	if forfall > 0:
+		var hvorfor := "Gudene krever nye offer hvert år."
+		if bygget.has("offerlunden"):
+			hvorfor += " Offerlunden hjelper, for der blir det ofret jevnlig."
+		else:
+			hvorfor += " Med en offerlund ville gunsten sunket langsommere."
+		if flagg.has("kors"):
+			hvorfor += " Mange tror gudene er sinte fordi du har sluppet inn den kristne troen."
+		innhold.add_child(_rik(hvorfor + "  " + _effekt_tekst({"gudene": -forfall}), 19))
 	if hevn:
 		innhold.add_child(_etikett("Hevntokt!", 26, C_ACCENT, font_fet))
 		innhold.add_child(_avsnitt("En natt kom fremmede skip inn fjorden. De brente et naust, drepte to menn og tok med seg sølv og dyr. Fiendene du har skaffet deg på tokt, glemmer ikke.", 21))
@@ -935,7 +968,7 @@ func _velg(h: Dictionary, valg: Dictionary) -> void:
 	var utfall: Dictionary = valg
 	var terning := ""
 	if valg.has("sjanse"):
-		if randf() < float(valg["sjanse"]):
+		if randf() < _sjanse(float(valg["sjanse"])):
 			utfall = valg["suksess"]
 			terning = "Lykken var med deg."
 		else:
@@ -1177,6 +1210,15 @@ func _vis_skip() -> void:
 	_tilbake_knapp().set_meta("ikke_auto", true)
 
 
+func _gudetekst() -> String:
+	var prosent := int(round(_gudebonus() * 100.0))
+	if prosent > 0:
+		return "gudene er med deg: +%d %%" % prosent
+	if prosent < 0:
+		return "gudene er imot deg: %d %%" % prosent
+	return "gudene er verken for eller imot deg"
+
+
 func _nytt_skip(kost: Dictionary) -> void:
 	_betal(kost)
 	flagg.erase("skip_tapt")
@@ -1203,7 +1245,7 @@ func _vis_maldetaljer() -> void:
 	var kost := _mal_kost(m)
 	var linjer := [
 		"[b]Pris:[/b] " + (_kost_tekst(kost) if not kost.is_empty() else "ingenting"),
-		"[b]Sjanse for å lykkes:[/b] %d %%" % int(round(float(m["sjanse"]) * 100.0)),
+		"[b]Sjanse for å lykkes:[/b] %d %%  [color=#%s](%s)[/color]" % [int(round(_sjanse(float(m["sjanse"])) * 100.0)), C_MUTED.to_html(false), _gudetekst()],
 		"[b]Gevinst hvis det går bra:[/b] " + _effekt_tekst(m["gevinst"]),
 	]
 	if m.has("kontakt"):
@@ -1239,7 +1281,7 @@ func _seil(id: String) -> void:
 	if id == "bulgar":
 		skip_borte_til = vinter + 1
 
-	var lykkes := randf() < float(m["sjanse"])
+	var lykkes := randf() < _sjanse(float(m["sjanse"]))
 	var effekter: Dictionary = m["gevinst"] if lykkes else m.get("fiasko_effekter", {})
 	_endre(effekter)
 	var fange := {}

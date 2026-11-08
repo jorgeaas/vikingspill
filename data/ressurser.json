@@ -21,7 +21,7 @@
 	"gudene": {
 		"navn": "Gudenes gunst",
 		"historisk": "Folk i vikingtiden trodde at gudene påvirket avlinger, vær, krig og helse. Gjennom blot, offerhandlinger med dyr og felles måltider, prøvde man å sikre et godt år og fred. Blotene ble ofte arrangert av folk med høy rang, og det å holde blot var en del av høvdingens makt.",
-		"spill": "Gudenes gunst avgjør hvor godt året blir: Over 65 gir rike avlinger, under 30 gir uår. Bålet i offerlunden brenner når gudene er fornøyde. Faller gunsten til null, mener bøndene at du har vendt gudene mot bygda, og du må flykte.",
+		"spill": "Gudenes gunst avgjør hvor godt året blir: Over 65 gir rike avlinger, under 30 gir uår. Den påvirker også om tokt, handelsreiser og andre farlige valg lykkes: Ved høy gunst øker sjansen med opptil 20 prosentpoeng, ved lav gunst synker den like mye. Gudene glemmer fort: Gunsten synker hver vinter, mindre hvis du har en offerlund, og mer hvis du har sluppet inn den kristne troen. Faller gunsten til null, mener bøndene at du har vendt gudene mot bygda, og du må flykte.",
 		"lenker": [
 			{"tekst": "Store norske leksikon: Blot", "url": "https://snl.no/blot"}
 		]

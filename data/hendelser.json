@@ -201,7 +201,7 @@
 			{
 				"tekst": "Hold et stort blot med hest og gilde",
 				"resultat": "Hesten ofres, blodet smøres på gudefigurene, og kjøttet kokes i store gryter. Alle spiser og drikker i tre dager.",
-				"effekter": {"solv": -15, "gudene": 20, "bondene": 10},
+				"effekter": {"solv": -15, "gudene": 15, "bondene": 10},
 				"flagg": "stort_blot"
 			},
 			{
@@ -491,7 +491,7 @@
 			{
 				"tekst": "Ta dem inn og gi dem mat og plass ved ilden",
 				"resultat": "Gjestene spiser og takker. Om morgenen er den gamle mannen borte – uten at noen så ham gå.",
-				"effekter": {"solv": -5, "aere": 10, "gudene": 10},
+				"effekter": {"solv": -5, "aere": 10, "gudene": 5},
 				"flagg": "gjestfri"
 			},
 			{

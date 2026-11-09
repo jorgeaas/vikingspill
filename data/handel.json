@@ -189,5 +189,14 @@
 		"lenker": [
 			{"tekst": "Norgeshistorie: Rane, bytte, kjøpe, gi", "url": "https://www.norgeshistorie.no/vikingtid/0806-rane-bytte-kjope-gi.html"}
 		]
+	},
+	"fakta_motangrep": {
+		"tittel": "Ofrene slo tilbake – der vikingene var",
+		"tekst": "Kildene forteller ikke om engelske, irske eller frankiske hevntokt mot Skandinavia. Ofrene forsvarte seg i stedet der vikingene herjet. Alfred den store bygde befestede byer (burhs) i England. Frankerkongen Karl den skallede lot bygge befestede broer over Seinen for å stenge elva. Irske konger drev vikingene ut av Dublin i 902. Jo oftere vikingene kom, desto bedre forberedt var forsvarerne.",
+		"kilde": "Samtidige krøniker fra England, Frankerriket og Irland",
+		"lenker": [
+			{"tekst": "Store norske leksikon: Alfred den store", "url": "https://snl.no/Alfred_den_store"},
+			{"tekst": "Norgeshistorie: Vikingferdene", "url": "https://www.norgeshistorie.no/vikingtid/0808-vikingferdene.html"}
+		]
 	}
 }

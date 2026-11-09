@@ -1,10 +1,9 @@
-# Bygger spillet for nettleser og publiserer det på GitHub Pages
-# hver gang noe blir lagt inn på main.
+# Tester og bygger spillet for nettleser. Bare endringer på main
+# blir publisert på GitHub Pages (elevlenken).
 name: Publiser spillet på nett
 
 on:
   push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -40,6 +39,13 @@ jobs:
           mv templates/* $TPL/
           rm -rf templates *.zip *.tpz
 
+      - name: Test spillet (autotest spiller tre runder)
+        run: |
+          godot --headless --import || true
+          timeout 600 godot --headless -- --autotest 2>&1 | tee autotest.log
+          grep -q "Autotest ferdig" autotest.log
+          if grep -E "SCRIPT ERROR|Parse Error|Invalid call|Invalid access" autotest.log; then exit 1; fi
+
       - name: Eksporter til web
         run: |
           godot --headless --import || true
@@ -49,11 +55,13 @@ jobs:
           test -f build/web/index.wasm
 
       - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
         with:
           path: build/web
 
   publiser:
     needs: bygg
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

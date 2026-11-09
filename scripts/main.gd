@@ -82,8 +82,11 @@ var bygget := {}
 var treller: Array = []
 ## Faste handelsforbindelser: mål-id -> sølv per vinter.
 var kontakter := {}
-## Hvor mange som vil hevne seg etter tokt. Gir fare for hevntokt.
-var fiender := 0
+## Fiender ved hvert toktmål (mål-id -> antall). Der du har plyndret,
+## er kysten bedre forsvart neste gang, og nye tokt dit blir farligere.
+var fiender := {}
+const FIENDE_STRAFF := 0.08
+const FIENDE_MAKS := 0.4
 var skip_seilt := false
 var skip_borte_til := 0
 var ting_brukt := false
@@ -186,6 +189,7 @@ func _alle_kort() -> Array:
 	for m in handeldata["mal"]:
 		ut.append({"id": "handel_" + m["id"], "fakta": m["fakta"]})
 	ut.append({"id": "plyndring", "fakta": handeldata["fakta_plyndring"]})
+	ut.append({"id": "motangrep", "fakta": handeldata["fakta_motangrep"]})
 	ut.append({"id": "ting_makt", "fakta": tingdata["fakta"]})
 	for s in tingdata["faste"]:
 		ut.append({"id": "ting_" + s["id"], "fakta": s["fakta"]})
@@ -274,6 +278,26 @@ func _gudebonus() -> float:
 
 func _sjanse(grunnsjanse: float) -> float:
 	return clampf(grunnsjanse + _gudebonus(), 0.05, 0.95)
+
+
+## Hvor mye dårligere sjansen er fordi kysten ved målet er forsvart.
+func _forsvar_straff(id: String) -> float:
+	return minf(FIENDE_STRAFF * int(fiender.get(id, 0)), FIENDE_MAKS)
+
+
+## Sjansen for å lykkes på en reise, med gudene og forsvaret ved målet.
+func _reise_sjanse(m: Dictionary) -> float:
+	var s := _sjanse(float(m["sjanse"]))
+	if m["type"] == "tokt":
+		s = clampf(s - _forsvar_straff(m["id"]), 0.05, 0.95)
+	return s
+
+
+func _fiender_totalt() -> int:
+	var sum := 0
+	for id in fiender:
+		sum += int(fiender[id])
+	return sum
 
 
 func _tapt() -> String:
@@ -704,7 +728,7 @@ func _start_spill(navn: String) -> void:
 	flagg = {}
 	bygget = {}
 	kontakter = {}
-	fiender = 0
+	fiender = {}
 	skip_borte_til = 0
 	logg = {}
 	treller = []
@@ -796,12 +820,9 @@ func _start_vinter() -> void:
 	if flagg.has("marked"):
 		deler.append(["Markedet i bygda", 3])
 
-	var hevn := false
 	if vinter == 1:
 		deler = []
 		aaret = "Du har overtatt gården og høysetet etter den gamle høvdingen. Gården er liten, men det finnes byggetomter (+) der du kan bygge den ut."
-	elif fiender > 0 and randf() < minf(0.15 * fiender, 0.7):
-		hevn = true
 	var sum := 0
 	for d in deler:
 		sum += d[1]
@@ -813,11 +834,6 @@ func _start_vinter() -> void:
 		if flagg.has("kors"):
 			forfall += GUDER_FORFALL_KRISTEN
 		_endre({"gudene": -forfall})
-	var hevn_tap := {"solv": -10, "bondene": -10, "aetten": -5}
-	if hevn:
-		_endre(hevn_tap)
-		fiender = maxi(fiender - 2, 0)
-		_logg("hevntokt")
 	_oppdater_topplinje()
 
 	_tom_innhold("vinter")
@@ -837,10 +853,6 @@ func _start_vinter() -> void:
 		if flagg.has("kors"):
 			hvorfor += " Mange tror gudene er sinte fordi du har sluppet inn den kristne troen."
 		innhold.add_child(_rik(hvorfor + "  " + _effekt_tekst({"gudene": -forfall}), 19))
-	if hevn:
-		innhold.add_child(_etikett("Hevntokt!", 26, C_ACCENT, font_fet))
-		innhold.add_child(_avsnitt("En natt kom fremmede skip inn fjorden. De brente et naust, drepte to menn og tok med seg sølv og dyr. Fiendene du har skaffet deg på tokt, glemmer ikke.", 21))
-		innhold.add_child(_rik(_effekt_tekst(hevn_tap)))
 	if not rommling.is_empty():
 		innhold.add_child(_etikett(rommling["navn"] + " er borte!", 26, C_ACCENT, font_fet))
 		innhold.add_child(_avsnitt("En morgen var plassen til %s i trellehuset tom. Noen så spor mot skogen." % rommling["navn"], 21))
@@ -1171,15 +1183,19 @@ func _vis_skip() -> void:
 		return
 	_tom_innhold("skip")
 	_overskrift("NAUSTET", "Handel og tokt")
-	innhold.add_child(_avsnitt("Velg et mål på kartet. Handel gir mindre sølv, men tryggere reiser og fast inntekt hver vinter etterpå. Tokt gir rask rikdom, ære og fanger, men skaper fiender som kan komme for å hevne seg.", 20))
+	innhold.add_child(_avsnitt("Velg et mål på kartet. Handel gir mindre sølv, men tryggere reiser og fast inntekt hver vinter etterpå. Tokt gir rask rikdom, ære og fanger, men skaper fiender. Der du har plyndret, er folk forberedt neste gang du kommer.", 20))
 	var status := []
 	if not kontakter.is_empty():
 		var navn := []
 		for id in kontakter:
 			navn.append("%s (+%d)" % [_mal(id)["navn"], int(kontakter[id])])
 		status.append("[b]Faste handelsforbindelser:[/b] " + ", ".join(navn))
-	if fiender > 0:
-		status.append("[color=#%s][b]Fiender: %d[/b] – det er fare for hevntokt mot gården.[/color]" % [C_ACCENT.to_html(false), fiender])
+	if _fiender_totalt() > 0:
+		var forsvart := []
+		for id in fiender:
+			if int(fiender[id]) > 0:
+				forsvart.append("%s (−%d %%)" % [_mal(id)["navn"], int(round(_forsvar_straff(id) * 100.0))])
+		status.append("[color=#%s][b]Kyster som venter deg:[/b] %s – tokt dit blir farligere.[/color]" % [C_ACCENT.to_html(false), ", ".join(forsvart)])
 	if flagg.has("felles_tokt"):
 		status.append("[b]Tinget har vedtatt felles tokt:[/b] Neste tokt får mannskap fra nabobygdene.")
 	if not status.is_empty():
@@ -1245,7 +1261,7 @@ func _vis_maldetaljer() -> void:
 	var kost := _mal_kost(m)
 	var linjer := [
 		"[b]Pris:[/b] " + (_kost_tekst(kost) if not kost.is_empty() else "ingenting"),
-		"[b]Sjanse for å lykkes:[/b] %d %%  [color=#%s](%s)[/color]" % [int(round(_sjanse(float(m["sjanse"])) * 100.0)), C_MUTED.to_html(false), _gudetekst()],
+		"[b]Sjanse for å lykkes:[/b] %d %%  [color=#%s](%s)[/color]" % [int(round(_reise_sjanse(m) * 100.0)), C_MUTED.to_html(false), _gudetekst()],
 		"[b]Gevinst hvis det går bra:[/b] " + _effekt_tekst(m["gevinst"]),
 	]
 	if m.has("kontakt"):
@@ -1254,7 +1270,9 @@ func _vis_maldetaljer() -> void:
 		linjer.append("[b]Trellemarked:[/b] Her selges også mennesker.")
 	if tokt:
 		linjer.append("[b]Fanger:[/b] Du tar med deg mennesker hjem som treller.")
-		linjer.append("[color=#%s][b]Fiender: +%d[/b] – de kan komme for å hevne seg.[/color]" % [C_ACCENT.to_html(false), int(m.get("fiender", 0))])
+		if int(fiender.get(m["id"], 0)) > 0:
+			linjer.append("[color=#%s][b]Kysten er forsvart:[/b] Folk her husker deg fra før, og sjansen er %d %% lavere.[/color]" % [C_ACCENT.to_html(false), int(round(_forsvar_straff(m["id"]) * 100.0))])
+		linjer.append("[color=#%s][b]Fiender: +%d[/b] – neste tokt hit blir farligere.[/color]" % [C_ACCENT.to_html(false), int(m.get("fiender", 0))])
 		linjer.append("[color=#%s][b]Hvis det går galt:[/b] %s, og %d %% fare for å miste skipet.[/color]" % [C_ACCENT.to_html(false), _effekt_tekst(m.get("fiasko_effekter", {})).replace("     ", ", "), int(round(float(m.get("skip_tap", 0.0)) * 100.0))])
 		if flagg.has("felles_tokt"):
 			linjer.append("[i]Nabobygdene stiller mannskap, så toktet koster ikke støtte fra bøndene.[/i]")
@@ -1281,7 +1299,7 @@ func _seil(id: String) -> void:
 	if id == "bulgar":
 		skip_borte_til = vinter + 1
 
-	var lykkes := randf() < _sjanse(float(m["sjanse"]))
+	var lykkes := randf() < _reise_sjanse(m)
 	var effekter: Dictionary = m["gevinst"] if lykkes else m.get("fiasko_effekter", {})
 	_endre(effekter)
 	var fange := {}
@@ -1294,10 +1312,10 @@ func _seil(id: String) -> void:
 			if not fange.is_empty():
 				treller.append(fange)
 				_logg("fanget")
-		fiender += int(m.get("fiender", 0))
+		fiender[id] = int(fiender.get(id, 0)) + int(m.get("fiender", 0))
 	else:
 		if tokt:
-			fiender += 1
+			fiender[id] = int(fiender.get(id, 0)) + 1
 		if randf() < float(m.get("skip_tap", 0.0)):
 			skip_mistet = true
 			flagg["skip_tapt"] = true
@@ -1328,7 +1346,7 @@ func _seil(id: String) -> void:
 		innhold.add_child(_etikett("Fange tatt med hjem", 22, C_ACCENT, font_fet))
 		innhold.add_child(_trellkort(fange))
 	if tokt:
-		innhold.add_child(_rik("[color=#%s][b]Fiender nå: %d[/b][/color]" % [C_ACCENT.to_html(false), fiender], 19))
+		innhold.add_child(_rik("[color=#%s][b]Fiender ved %s nå: %d[/b] – sjansen for å lykkes neste gang er %d %% lavere.[/color]" % [C_ACCENT.to_html(false), m["navn"], int(fiender.get(id, 0)), int(round(_forsvar_straff(id) * 100.0))], 19))
 	if lykkes and m.get("trellmarked", false):
 		var paa_marked := _ny_trell("marked")
 		if not paa_marked.is_empty():
@@ -1343,6 +1361,7 @@ func _seil(id: String) -> void:
 	_vis_kort("handel_" + id, m["fakta"])
 	if tokt:
 		_vis_kort("plyndring", handeldata["fakta_plyndring"])
+		_vis_kort("motangrep", handeldata["fakta_motangrep"])
 	_tilbake_knapp()
 
 
@@ -1493,7 +1512,9 @@ func _ting_stem() -> void:
 	var effekter: Dictionary = ting_valg.get("effekter", {}) if vant else {"aere": -5}
 	_endre(effekter)
 	if vant:
-		fiender = maxi(fiender + int(ting_valg.get("fiender", 0)), 0)
+		if ting_valg.has("fiender_mal"):
+			var fm: String = ting_valg["fiender_mal"]
+			fiender[fm] = maxi(int(fiender.get(fm, 0)) + int(ting_valg.get("fiender", 0)), 0)
 		if ting_valg.has("kontakt"):
 			kontakter["hedeby"] = maxi(int(kontakter.get("hedeby", 0)), int(ting_valg["kontakt"]))
 		if ting_valg.has("flagg"):
@@ -1519,8 +1540,9 @@ func _ting_stem() -> void:
 	var eff := _effekt_tekst(effekter)
 	if eff != "":
 		innhold.add_child(_rik(eff, 20))
-	if vant and int(ting_valg.get("fiender", 0)) != 0:
-		innhold.add_child(_rik("[b]Fiender: %+d[/b]  (nå %d)" % [int(ting_valg["fiender"]), fiender], 19))
+	if vant and ting_valg.has("fiender_mal"):
+		var fm2: String = ting_valg["fiender_mal"]
+		innhold.add_child(_rik("[b]Fiender ved %s: %+d[/b]  (nå %d)" % [_mal(fm2)["navn"], int(ting_valg.get("fiender", 0)), int(fiender.get(fm2, 0))], 19))
 	var kort := _fakta_for_tingsak(ting_sak)
 	if not kort.is_empty():
 		_vis_kort(kort[0], kort[1])
@@ -1566,7 +1588,7 @@ func _vis_slutt(tapt: String) -> void:
 	innhold.add_child(_avsnitt("\n".join(sporsmal), 20))
 	_vis_kort("sagaer", sagadata["fakta"])
 	innhold.add_child(_runestein(innskrift))
-	innhold.add_child(_rik("Sølv: [b]%d[/b]     Ære: [b]%d[/b]     Gudenes gunst: [b]%d[/b]     Ætten: [b]%d[/b]     Bøndene: [b]%d[/b]\nTreller: [b]%d[/b]     Handelsforbindelser: [b]%d[/b]     Fiender: [b]%d[/b]" % [stats["solv"], stats["aere"], stats["gudene"], stats["aetten"], stats["bondene"], treller.size(), kontakter.size(), fiender], 19))
+	innhold.add_child(_rik("Sølv: [b]%d[/b]     Ære: [b]%d[/b]     Gudenes gunst: [b]%d[/b]     Ætten: [b]%d[/b]     Bøndene: [b]%d[/b]\nTreller: [b]%d[/b]     Handelsforbindelser: [b]%d[/b]     Fiender: [b]%d[/b]" % [stats["solv"], stats["aere"], stats["gudene"], stats["aetten"], stats["bondene"], treller.size(), kontakter.size(), _fiender_totalt()], 19))
 	innhold.add_child(_avsnitt("Du har samlet %d av %d kunnskapskort. Spill igjen for å møte nye saker!" % [_antall_funnet(), _alle_kort().size()], 21, C_INK, font_fet))
 	innhold.add_child(_knapp("Spill igjen", _vis_start, true))
 	var kort_knapp := _knapp("Se kunnskapskortene", _vis_samling, true)
@@ -1631,8 +1653,6 @@ func _lag_saga(tapt: String) -> Array:
 		s.append("Skipene til %s seilte også opp elva Seinen i Frankland og kom hjem med mye gods. Skaldene kvad om det, men frankerne ba til Gud om å bli fridd fra nordmennenes raseri." % n)
 	if int(logg.get("tokt_feil", 0)) > 0:
 		s.append("Ikke alle ferdene gikk vel. Mange gode menn fra bygda ligger i fremmed jord, og kvinnene gråt i langhusene den høsten.")
-	if int(logg.get("hevntokt", 0)) > 0:
-		s.append("Fiendene høvdingen hadde skaffet seg, kom tilbake over havet og brente nausta. Slik straffet Gud ranet, sier noen.")
 	if int(logg.get("tokt_ok", 0)) + int(logg.get("tokt_feil", 0)) == 0:
 		s.append("%s fór aldri i viking, men satt fredelig på gården sin." % n)
 
@@ -1757,7 +1777,7 @@ func _autotest() -> void:
 		flagg["stort_blot"] = true
 		flagg["gjestfri"] = true
 		flagg["kvad"] = true
-		logg = {"tokt_irland": 1, "tokt_ok": 1, "hevntokt": 1, "solgt": 1, "handel_bulgar": 1, "handel": 1, "ting_vunnet": 2}
+		logg = {"tokt_irland": 1, "tokt_ok": 1, "solgt": 1, "handel_bulgar": 1, "handel": 1, "ting_vunnet": 2}
 		var rommling: Dictionary = treller[1]
 		treller.erase(rommling)
 		var h := {"rommling": rommling, "sted": "skogen", "person": "", "tittel": ""}
@@ -1797,7 +1817,7 @@ func _autotest() -> void:
 				if valgt_mal == "" or randf() < 0.3:
 					_velg_mal(handeldata["mal"].pick_random()["id"])
 			"slutt":
-				print("Runde %d ferdig: %s  treller: %d  kontakter: %s  fiender: %d  bygd: %s" % [runder, stats, treller.size(), kontakter.keys(), fiender, bygget.keys()])
+				print("Runde %d ferdig: %s  treller: %d  kontakter: %s  fiender: %d  bygd: %s" % [runder, stats, treller.size(), kontakter.keys(), _fiender_totalt(), bygget.keys()])
 		var knapper := []
 		for c in _alle_knapper(innhold):
 			if not c.disabled and not c.has_meta("ikke_auto"):

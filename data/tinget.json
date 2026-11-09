@@ -32,8 +32,7 @@
 					"tekst": "Nekt – bygda trenger mennene selv",
 					"motstand": 55,
 					"resultat": "Tinget står samlet mot jarlen. Bøndene er stolte, men jarlen glemmer ikke.",
-					"effekter": {"bondene": 10, "aere": 5},
-					"fiender": 1
+					"effekter": {"bondene": 10, "aere": 5}
 				}
 			],
 			"fakta": {
@@ -58,7 +57,8 @@
 					"motstand": 50,
 					"resultat": "Tinget stemmer for tokt. Bygdas skip seiler vestover og kommer hjem med sølv. Men i vest har dere fått nye fiender.",
 					"effekter": {"solv": 25, "aere": 10},
-					"fiender": 2
+					"fiender": 2,
+					"fiender_mal": "england"
 				},
 				{
 					"tekst": "Til handel i Hedeby – trygg inntekt",
@@ -119,18 +119,25 @@
 	"forslag": [
 		{
 			"id": "forsvar",
-			"tittel": "Felles forsvar mot hevntokt",
-			"tekst": "Fiender fra vest kan komme når som helst. Du foreslår at alle gårdene skal stille menn og våpen, og holde vakt langs kysten om sommeren.",
+			"tittel": "Felles forsvar langs kysten",
+			"tekst": "Det er ikke bare du som drar i viking. Sjørøvere fra andre bygder og fra vikingbasene i vest herjer også norskekysten. Du foreslår at alle gårdene skal stille menn og våpen, og holde vakt langs kysten om sommeren.",
 			"valg": [
 				{
 					"tekst": "Legg fram forslaget",
 					"motstand": 45,
-					"resultat": "Tinget vedtar felles forsvar. Fiendene dine vet at bygda nå står samlet, og færre våger å angripe.",
-					"effekter": {"bondene": -5, "aere": 5},
-					"fiender": -2
+					"resultat": "Tinget vedtar felles forsvar. Bøndene sover tryggere om sommeren, og du får æren for at bygda står samlet.",
+					"effekter": {"bondene": 5, "aere": 5}
 				}
 			],
-			"fakta_ref": "leidang"
+			"fakta": {
+				"tittel": "Vikinger mot vikinger",
+				"tekst": "Vikingene herjet ikke bare i fremmede land. De angrep også kystene i Skandinavia. Ifølge Snorre seilte Harald Hårfagre vestover for å stanse vikinger som brukte Orknøy og Shetland som base for tokt mot Norge. Han gjorde også Gange-Rolv fredløs fordi han hadde drevet strandhogg i Viken. Kystbygdene trengte derfor felles forsvar, og leidangen ble etter hvert et system for å forsvare kysten.",
+				"kilde": "Snorres kongesagaer (skrevet rundt 1230) og landskapslovene",
+				"lenker": [
+					{"tekst": "Store norske leksikon: Gange-Rolv", "url": "https://snl.no/Gange-Rolv"},
+					{"tekst": "Store norske leksikon: Leidang", "url": "https://snl.no/leidang"}
+				]
+			}
 		},
 		{
 			"id": "marked",
